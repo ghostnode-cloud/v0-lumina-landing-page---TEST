@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Info } from "lucide-react"
 import { useBookingModal } from "./booking-modal"
+import { LearnMoreModal } from "./learn-more-modal"
 
 export function HeroSection() {
   const { openModal } = useBookingModal()
@@ -68,14 +69,28 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="mt-10 flex flex-col items-center gap-4"
           >
-            <Button
-              onClick={openModal}
-              size="lg"
-              className="group bg-accent px-8 py-6 text-base font-medium text-accent-foreground hover:bg-accent/90"
-            >
-              Book Your Tax Strategy Session
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <div className="flex flex-col items-center gap-3 sm:flex-row">
+              <Button
+                onClick={openModal}
+                size="lg"
+                className="group bg-accent px-8 py-6 text-base font-medium text-accent-foreground hover:bg-accent/90"
+              >
+                Book Your Tax Strategy Session
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <LearnMoreModal
+                trigger={
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="group border-border/40 bg-transparent px-6 py-6 text-base font-medium text-foreground hover:border-accent/50 hover:bg-accent/5 hover:text-accent"
+                  >
+                    <Info className="mr-2 h-4 w-4" />
+                    Learn More
+                  </Button>
+                }
+              />
+            </div>
             <p className="text-sm text-muted-foreground">
               Direct access to Marcus Chen -- no gatekeepers.
             </p>
