@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Instrument_Serif } from "next/font/google"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "./globals.css"
 
@@ -54,7 +55,10 @@ export default function RootLayout({
       lang="en"
       className={`dark ${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
     >
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   )
 }
