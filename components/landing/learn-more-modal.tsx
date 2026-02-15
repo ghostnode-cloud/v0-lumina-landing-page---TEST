@@ -16,7 +16,9 @@ import {
   Zap,
   Brain,
   Clock,
+  ArrowRight,
 } from "lucide-react"
+import { useBookingModal } from "./booking-modal"
 import { motion, AnimatePresence } from "framer-motion"
 
 const REASONS = [
@@ -64,6 +66,12 @@ interface LearnMoreModalProps {
 
 export function LearnMoreModal({ trigger }: LearnMoreModalProps) {
   const [open, setOpen] = useState(false)
+  const { openModal } = useBookingModal()
+
+  const handleBooking = () => {
+    setOpen(false)
+    setTimeout(() => openModal(), 200)
+  }
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -108,6 +116,25 @@ export function LearnMoreModal({ trigger }: LearnMoreModalProps) {
             </div>
           )}
         </AnimatePresence>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
+          className="mt-6 flex flex-col items-center gap-2 border-t border-border/20 pt-6"
+        >
+          <Button
+            onClick={handleBooking}
+            size="lg"
+            className="group w-full bg-accent text-accent-foreground hover:bg-accent/90"
+          >
+            Book Your Tax Strategy Session
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Button>
+          <p className="text-xs text-muted-foreground">
+            Free 30-minute session -- no obligation.
+          </p>
+        </motion.div>
       </DialogContent>
     </Dialog>
   )
