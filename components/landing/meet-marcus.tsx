@@ -1,0 +1,70 @@
+"use client"
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
+import { ScrollAnimation } from "./scroll-animation"
+import { useBookingModal } from "./booking-modal"
+import { ArrowRight } from "lucide-react"
+
+export function MeetMarcus() {
+  const { openModal } = useBookingModal()
+
+  return (
+    <section id="about" className="py-24 sm:py-32">
+      <div className="section-container">
+        <ScrollAnimation>
+          <div className="glass-card overflow-hidden">
+            <div className="flex flex-col items-center gap-10 p-8 md:flex-row md:gap-16 md:p-12 lg:p-16">
+              {/* Avatar / Headshot */}
+              <div className="flex-shrink-0">
+                <div className="relative">
+                  <div className="absolute -inset-1 rounded-full bg-accent/20 blur-md" />
+                  <Avatar className="relative h-40 w-40 border-2 border-accent/30 sm:h-48 sm:w-48 md:h-56 md:w-56">
+                    <AvatarImage
+                      src="/placeholder-marcus.jpg"
+                      alt="Marcus Chen, CPA - Founder of Lumina Tax & Advisory"
+                    />
+                    <AvatarFallback className="bg-muted text-3xl font-serif text-foreground">
+                      MC
+                    </AvatarFallback>
+                  </Avatar>
+                </div>
+              </div>
+
+              {/* Bio Content */}
+              <div className="flex flex-col text-center md:text-left">
+                <span className="mb-3 text-xs font-medium uppercase tracking-widest text-accent">
+                  Meet Your Strategist
+                </span>
+                <h2 className="font-serif text-3xl text-foreground sm:text-4xl">
+                  Marcus Chen, CPA
+                </h2>
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
+                  After a decade advising high-growth startups and their founders
+                  at top-tier firms, Marcus launched Lumina to do things
+                  differently. No layers of junior staff. No cookie-cutter
+                  playbooks. Just direct access to a strategist who speaks your
+                  language -- tech, equity, and ambition.
+                </p>
+                <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
+                  His clients include seed-stage founders, series-funded CTOs,
+                  and bootstrapped entrepreneurs who refuse to overpay the IRS.
+                </p>
+                <div className="mt-6">
+                  <Button
+                    variant="ghost"
+                    onClick={openModal}
+                    className="group text-accent hover:bg-accent/10 hover:text-accent"
+                  >
+                    Book a conversation with Marcus
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ScrollAnimation>
+      </div>
+    </section>
+  )
+}
