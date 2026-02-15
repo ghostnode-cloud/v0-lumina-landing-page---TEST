@@ -4,11 +4,23 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Linkedin, ArrowLeft } from "lucide-react"
+import { Mail, Linkedin, ArrowLeft, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { BookingModalProvider, useBookingModal } from "@/components/landing/booking-modal"
+import { BentoFooter } from "@/components/landing/bento-footer"
 
 export function ContactPageContent() {
+  return (
+    <BookingModalProvider>
+      <ContactPageInner />
+    </BookingModalProvider>
+  )
+}
+
+function ContactPageInner() {
+  const { openModal } = useBookingModal()
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header Bar */}
@@ -173,15 +185,41 @@ export function ContactPageContent() {
         </div>
       </main>
 
-      {/* Simple footer */}
-      <footer className="border-t border-border/30 bg-[#0A0F1C] py-8">
-        <div className="section-container text-center">
-          <p className="text-xs text-muted-foreground/60">
-            &copy; {new Date().getFullYear()} Lumina Tax & Advisory. All rights
-            reserved.
-          </p>
+      {/* CTA Section */}
+      <section className="border-t border-border/30 bg-background py-20 sm:py-28">
+        <div className="section-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto flex max-w-2xl flex-col items-center text-center"
+          >
+            <span className="mb-3 inline-block text-xs font-medium uppercase tracking-widest text-accent">
+              Take the Next Step
+            </span>
+            <h2 className="font-serif text-3xl text-foreground sm:text-4xl text-balance">
+              Prefer a strategy session instead?
+            </h2>
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
+              Book a free 30-minute call with Marcus to discuss your tax
+              situation and explore how Lumina can help you keep more of what
+              you earn.
+            </p>
+            <Button
+              onClick={openModal}
+              size="lg"
+              className="group mt-8 bg-accent text-accent-foreground hover:bg-accent/90"
+            >
+              Book Your Tax Strategy Session
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </motion.div>
         </div>
-      </footer>
+      </section>
+
+      {/* Bento Footer */}
+      <BentoFooter />
     </div>
   )
 }
