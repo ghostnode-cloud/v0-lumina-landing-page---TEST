@@ -77,7 +77,7 @@ export function MeetMarcus() {
                     onClick={openModal}
                     className="group text-accent hover:bg-accent/10 hover:text-accent"
                   >
-                    Book a conversation with Marcus
+                    Book Your Tax Strategy Session
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </div>

@@ -45,7 +45,7 @@ export function MobileCtaBar() {
                 Ready to talk?
               </span>
               <span className="text-sm text-foreground">
-                Book your tax strategy session.
+                Book Your Tax Strategy Session.
               </span>
             </div>
             <Button
@@ -53,7 +53,7 @@ export function MobileCtaBar() {
               className="bg-accent px-4 text-xs font-medium text-accent-foreground hover:bg-accent/90"
               onClick={openModal}
             >
-              Book a call
+              Book Your Tax Strategy Session
             </Button>
           </div>
         </motion.div>

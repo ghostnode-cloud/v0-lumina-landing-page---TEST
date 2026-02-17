@@ -58,9 +58,9 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 
 ## 7. Copy & Consistency
 
-- [ ] **7.1** Standardize CTA wording: choose one primary phrase (“Book Your Tax Strategy Session” vs “Book Your Strategy Session”) and apply consistently (e.g. longer for hero/footer, shorter for header).
-- [ ] **7.2** Reuse or echo “Direct access to Marcus Chen — no gatekeepers” (or variant) in booking modal description.
-- [ ] **7.3** When replacing placeholder FAQ/pricing content, keep tone and approximate length consistent to avoid layout/rhythm issues.
+- [x] **7.1** Standardize CTA wording: choose one primary phrase (“Book Your Tax Strategy Session” vs “Book Your Strategy Session”) and apply consistently (e.g. longer for hero/footer, shorter for header).
+- [x] **7.2** Reuse or echo “Direct access to Marcus Chen — no gatekeepers” (or variant) in booking modal description.
+- [x] **7.3** When replacing placeholder FAQ/pricing content, keep tone and approximate length consistent to avoid layout/rhythm issues.
 
 ---
 
@@ -98,10 +98,10 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 | 4. Modals & Forms            | 3    | 3     |
 | 5. Motion & Micro-Interactions | 4  | 4     |
 | 6. Responsive & Layout       | 3    | 3     |
-| 7. Copy & Consistency        | 0    | 3     |
+| 7. Copy & Consistency        | 3    | 3     |
 | 8. Performance               | 0    | 3     |
 | 9. Accessibility             | 0    | 3     |
 | 10. Small Wins               | 0    | 3     |
-| **Total**                    | **15**| **34**|
+| **Total**                    | **18**| **34**|
 
 *Update the “Done” counts as you complete items. Optional items still count in Total if you choose to implement them.*

@@ -116,7 +116,7 @@ export function Header() {
             size="sm"
             className="hidden bg-accent text-accent-foreground hover:bg-accent/90 sm:inline-flex"
           >
-            Book Your Strategy Session
+            Book Your Tax Strategy Session
           </Button>
           <MobileNav />
         </div>

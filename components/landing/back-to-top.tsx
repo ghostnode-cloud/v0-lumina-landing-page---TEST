@@ -47,7 +47,7 @@ export function BackToTop() {
               transition={{ duration: 0.2 }}
               onClick={openModal}
               className="fixed bottom-6 left-6 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-secondary text-secondary-foreground shadow-lg transition-colors hover:bg-secondary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
-              aria-label="Book a call"
+              aria-label="Book Your Tax Strategy Session"
             >
               <span className="text-xs font-semibold">Book</span>
             </motion.button>

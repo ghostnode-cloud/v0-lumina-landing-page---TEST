@@ -80,14 +80,14 @@ export function FaqSection() {
                 Still have questions?
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Book a quick call and get direct answers from Marcus.
+                Book your tax strategy session and get direct answers from Marcus.
               </p>
             </div>
             <Button
               onClick={openModal}
               className="group bg-accent text-accent-foreground hover:bg-accent/90"
             >
-              Book a call
+              Book Your Tax Strategy Session
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>

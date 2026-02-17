@@ -71,7 +71,7 @@ function BookingModal({
             Book Your Tax Strategy Session
           </DialogTitle>
           <DialogDescription className="text-center text-muted-foreground">
-            Get direct access to Marcus Chen. No gatekeepers, no runaround.
+            Direct access to Marcus Chen — no gatekeepers. No runaround, no layers of junior staff.
           </DialogDescription>
         </DialogHeader>
 

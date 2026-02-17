@@ -102,7 +102,7 @@ export function HeroSection() {
               />
             </div>
             <p className="text-sm text-muted-foreground">
-              Direct access to Marcus Chen -- no gatekeepers.
+              Direct access to Marcus Chen — no gatekeepers.
             </p>
           </motion.div>
         </div>

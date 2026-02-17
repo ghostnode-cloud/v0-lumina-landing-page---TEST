@@ -145,7 +145,7 @@ export function PricingSection() {
               >
                 {tier.price === "Custom"
                   ? "Get in Touch"
-                  : "Book Your Strategy Session"}
+                  : "Book Your Tax Strategy Session"}
               </Button>
             </motion.div>
           ))}

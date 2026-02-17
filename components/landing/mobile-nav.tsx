@@ -86,7 +86,7 @@ export function MobileNav() {
             onClick={handleBooking}
             className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
           >
-            Book Your Strategy Session
+            Book Your Tax Strategy Session
           </Button>
         </div>
       </SheetContent>
