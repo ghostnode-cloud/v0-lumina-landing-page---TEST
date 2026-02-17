@@ -5,12 +5,17 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Info } from "lucide-react"
 import { useBookingModal } from "./booking-modal"
 import { LearnMoreModal } from "./learn-more-modal"
+import { AuroraBackground } from "./aurora-background"
 
 export function HeroSection() {
   const { openModal } = useBookingModal()
 
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
+      {/* Subtle aurora / gradient mesh behind hero for depth */}
+      <div className="pointer-events-none absolute inset-0 opacity-50" aria-hidden="true">
+        <AuroraBackground />
+      </div>
       {/* Background accent glow */}
       <div
         className="pointer-events-none absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2"
@@ -59,8 +64,13 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl"
           >
-            Cutting-edge tax optimization for tech founders and growth-focused
-            businesses. One strategist. Full attention. Real results.
+            <span className="md:hidden">
+              One strategist. Full attention. Real results.
+            </span>
+            <span className="hidden md:inline">
+              Cutting-edge tax optimization for tech founders and growth-focused
+              businesses. One strategist. Full attention. Real results.
+            </span>
           </motion.p>
 
           <motion.div

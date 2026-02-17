@@ -6,9 +6,9 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 
 ## 1. Visual Hierarchy & Hero
 
-- [ ] **1.1** Add subtle gradient mesh or soft aurora behind hero glow (consider using or adapting `aurora-background.tsx` on main page) for depth.
-- [ ] **1.2** Shorten or simplify hero subcopy on mobile for better above-the-fold scannability (e.g. one clear benefit in first line).
-- [ ] **1.3** Add optional “As seen in” or “Trusted by” line above or near trust strip (placeholder logos or text) to bridge social proof before stats.
+- [x] **1.1** Add subtle gradient mesh or soft aurora behind hero glow (consider using or adapting `aurora-background.tsx` on main page) for depth.
+- [x] **1.2** Shorten or simplify hero subcopy on mobile for better above-the-fold scannability (e.g. one clear benefit in first line).
+- [x] **1.3** Add optional “As seen in” or “Trusted by” line above or near trust strip (placeholder logos or text) to bridge social proof before stats.
 
 ---
 
@@ -92,7 +92,7 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 
 | Category                      | Done | Total |
 |------------------------------|------|-------|
-| 1. Visual Hierarchy & Hero    | 0    | 3     |
+| 1. Visual Hierarchy & Hero    | 3    | 3     |
 | 2. Navigation & Wayfinding    | 0    | 3     |
 | 3. Sections & Content        | 0    | 6     |
 | 4. Modals & Forms            | 0    | 3     |
@@ -102,6 +102,6 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 | 8. Performance               | 0    | 3     |
 | 9. Accessibility             | 0    | 3     |
 | 10. Small Wins               | 0    | 3     |
-| **Total**                    | **0**| **34**|
+| **Total**                    | **3**| **34**|
 
 *Update the “Done” counts as you complete items. Optional items still count in Total if you choose to implement them.*

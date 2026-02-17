@@ -14,6 +14,12 @@ export function TrustStrip() {
     <section className="relative border-y border-border/30 bg-muted/50 py-12 sm:py-16">
       <div className="section-container">
         <ScrollAnimation>
+          <p className="mb-8 text-center text-sm font-medium uppercase tracking-widest text-muted-foreground">
+            Trusted by founders at
+          </p>
+          <p className="mx-auto mb-10 max-w-xl text-center text-xs text-muted-foreground/80 sm:text-sm">
+            Tech accelerators · Series A+ startups · VC-backed teams
+          </p>
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-border/30">
             {stats.map((stat) => (
               <div
