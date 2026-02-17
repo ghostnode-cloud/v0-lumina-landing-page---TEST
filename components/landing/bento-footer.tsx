@@ -1,9 +1,23 @@
 "use client"
 
+import type React from "react"
 import { Button } from "@/components/ui/button"
 import { Mail, Linkedin, ArrowRight } from "lucide-react"
 import { useBookingModal } from "./booking-modal"
 import { ScrollAnimation } from "./scroll-animation"
+
+function handleFooterNavClick(
+  e: React.MouseEvent<HTMLAnchorElement>,
+  href: string
+) {
+  if (!href.startsWith("#")) return
+
+  e.preventDefault()
+  const el = document.querySelector(href)
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" })
+  }
+}
 
 export function BentoFooter() {
   const { openModal } = useBookingModal()
@@ -74,6 +88,7 @@ export function BentoFooter() {
                   <a
                     key={link.href}
                     href={link.href}
+                    onClick={(e) => handleFooterNavClick(e, link.href)}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.label}

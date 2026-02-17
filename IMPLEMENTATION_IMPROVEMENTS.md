@@ -14,9 +14,9 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 
 ## 2. Navigation & Wayfinding
 
-- [ ] **2.1** Add active section state to main nav (underline or color change for About / Method / Pricing / FAQ) based on scroll position.
-- [ ] **2.2** Apply same smooth-scroll-on-click behavior to footer in-page links (`#about`, `#method`, etc.) as used in header.
-- [ ] **2.3** (Optional) Add floating CTA bar on mobile (e.g. bottom bar “Book a call”) after user scrolls past hero, without removing back-to-top.
+- [x] **2.1** Add active section state to main nav (underline or color change for About / Method / Pricing / FAQ) based on scroll position.
+- [x] **2.2** Apply same smooth-scroll-on-click behavior to footer in-page links (`#about`, `#method`, etc.) as used in header.
+- [x] **2.3** (Optional) Add floating CTA bar on mobile (e.g. bottom bar “Book a call”) after user scrolls past hero, without removing back-to-top.
 
 ---
 
@@ -93,7 +93,7 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 | Category                      | Done | Total |
 |------------------------------|------|-------|
 | 1. Visual Hierarchy & Hero    | 3    | 3     |
-| 2. Navigation & Wayfinding    | 0    | 3     |
+| 2. Navigation & Wayfinding    | 3    | 3     |
 | 3. Sections & Content        | 0    | 6     |
 | 4. Modals & Forms            | 0    | 3     |
 | 5. Motion & Micro-Interactions | 0  | 4     |
@@ -102,6 +102,6 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 | 8. Performance               | 0    | 3     |
 | 9. Accessibility             | 0    | 3     |
 | 10. Small Wins               | 0    | 3     |
-| **Total**                    | **3**| **34**|
+| **Total**                    | **6**| **34**|
 
 *Update the “Done” counts as you complete items. Optional items still count in Total if you choose to implement them.*

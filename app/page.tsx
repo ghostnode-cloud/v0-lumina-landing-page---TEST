@@ -11,6 +11,7 @@ import { PricingSection } from "@/components/landing/pricing-section"
 import { FaqSection } from "@/components/landing/faq-section"
 import { BentoFooter } from "@/components/landing/bento-footer"
 import { BackToTop } from "@/components/landing/back-to-top"
+import { MobileCtaBar } from "@/components/landing/mobile-cta-bar"
 
 export default function Page() {
   return (
@@ -27,6 +28,7 @@ export default function Page() {
       </main>
       <BentoFooter />
       <BackToTop />
+      <MobileCtaBar />
     </BookingModalProvider>
   )
 }
