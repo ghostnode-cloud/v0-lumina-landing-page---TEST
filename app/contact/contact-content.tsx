@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -21,6 +22,7 @@ export function ContactPageContent() {
 
 function ContactPageInner() {
   const { openModal } = useBookingModal()
+  const [submitted, setSubmitted] = useState(false)
 
   return (
     <div className="min-h-screen bg-background">
@@ -72,7 +74,10 @@ function ContactPageInner() {
             >
               <form
                 className="flex flex-col gap-5"
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  setSubmitted(true)
+                }}
               >
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div className="flex flex-col gap-2">
@@ -155,6 +160,17 @@ function ContactPageInner() {
                   Send Message
                 </Button>
               </form>
+              {submitted && (
+                <div className="mt-6 rounded-lg border border-border/40 bg-background/60 p-4 text-sm text-muted-foreground">
+                  <p className="font-medium text-foreground">
+                    Thanks for reaching out.
+                  </p>
+                  <p className="mt-1">
+                    We&apos;ve received your message and will be in touch within
+                    4 business hours.
+                  </p>
+                </div>
+              )}
             </motion.div>
 
             {/* Direct contact info */}

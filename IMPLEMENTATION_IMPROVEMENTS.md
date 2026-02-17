@@ -22,20 +22,20 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 
 ## 3. Sections & Content
 
-- [ ] **3.1** Meet Marcus: Add small credential line or badge near name (e.g. “CPA”, “15+ years”, “Former Big 4”) for trust.
-- [ ] **3.2** Lumina Method: Make one card slightly larger or “featured” (e.g. Founder-Focused Optimization) to create a focal point.
-- [ ] **3.3** Testimonials: Add “1 / 3” (or current/total) counter to dot indicators for clarity.
-- [ ] **3.4** Testimonials: (Optional) Add one-time “Swipe for more” hint on mobile on first view.
-- [ ] **3.5** Pricing: Add optional placeholder line for Enterprise tier (e.g. “Typical engagement: $X–Y/mo” or “Starting at…”) to reduce friction.
-- [ ] **3.6** FAQ: Add “Still have questions? Book a call” (or similar) CTA link/button at bottom of FAQ section that opens booking modal.
+- [x] **3.1** Meet Marcus: Add small credential line or badge near name (e.g. “CPA”, “15+ years”, “Former Big 4”) for trust.
+- [x] **3.2** Lumina Method: Make one card slightly larger or “featured” (e.g. Founder-Focused Optimization) to create a focal point.
+- [x] **3.3** Testimonials: Add “1 / 3” (or current/total) counter to dot indicators for clarity.
+- [x] **3.4** Testimonials: (Optional) Add one-time “Swipe for more” hint on mobile on first view.
+- [x] **3.5** Pricing: Add optional placeholder line for Enterprise tier (e.g. “Typical engagement: $X–Y/mo” or “Starting at…”) to reduce friction.
+- [x] **3.6** FAQ: Add “Still have questions? Book a call” (or similar) CTA link/button at bottom of FAQ section that opens booking modal.
 
 ---
 
 ## 4. Modals & Forms (UI Only)
 
-- [ ] **4.1** Booking modal: Add optional “What’s your biggest tax concern?” (dropdown or chips: e.g. Equity comp, R&D credits, Entity structure); client-side state only.
-- [ ] **4.2** Learn More modal: Consider tabs or “1 of 6” step indicator so the six reasons feel more guided.
-- [ ] **4.3** Contact page: Add client-side success state after submit (e.g. “Thanks, we’ll be in touch within 4 hours”) with no backend required.
+- [x] **4.1** Booking modal: Add optional “What’s your biggest tax concern?” (dropdown or chips: e.g. Equity comp, R&D credits, Entity structure); client-side state only.
+- [x] **4.2** Learn More modal: Consider tabs or “1 of 6” step indicator so the six reasons feel more guided.
+- [x] **4.3** Contact page: Add client-side success state after submit (e.g. “Thanks, we’ll be in touch within 4 hours”) with no backend required.
 
 ---
 
@@ -94,14 +94,14 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 |------------------------------|------|-------|
 | 1. Visual Hierarchy & Hero    | 3    | 3     |
 | 2. Navigation & Wayfinding    | 3    | 3     |
-| 3. Sections & Content        | 0    | 6     |
-| 4. Modals & Forms            | 0    | 3     |
+| 3. Sections & Content        | 6    | 6     |
+| 4. Modals & Forms            | 3    | 3     |
 | 5. Motion & Micro-Interactions | 0  | 4     |
 | 6. Responsive & Layout       | 0    | 3     |
 | 7. Copy & Consistency        | 0    | 3     |
 | 8. Performance               | 0    | 3     |
 | 9. Accessibility             | 0    | 3     |
 | 10. Small Wins               | 0    | 3     |
-| **Total**                    | **6**| **34**|
+| **Total**                    | **15**| **34**|
 
 *Update the “Done” counts as you complete items. Optional items still count in Total if you choose to implement them.*

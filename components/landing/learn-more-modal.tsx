@@ -66,6 +66,7 @@ interface LearnMoreModalProps {
 
 export function LearnMoreModal({ trigger }: LearnMoreModalProps) {
   const [open, setOpen] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(0)
   const { openModal } = useBookingModal()
 
   const handleBooking = () => {
@@ -89,31 +90,78 @@ export function LearnMoreModal({ trigger }: LearnMoreModalProps) {
           </DialogDescription>
         </DialogHeader>
 
-        <AnimatePresence>
+        {/* Step indicator */}
+        <div className="mt-2 flex items-center justify-between text-xs text-muted-foreground">
+          <span>
+            Reason {activeIndex + 1} of {REASONS.length}
+          </span>
+          <div className="flex gap-1">
+            {REASONS.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                className={`h-1.5 rounded-full transition-all ${
+                  index === activeIndex
+                    ? "w-4 bg-accent"
+                    : "w-1.5 bg-muted-foreground/30"
+                }`}
+                aria-label={`Jump to reason ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <AnimatePresence mode="wait">
           {open && (
-            <div className="mt-4 flex flex-col gap-4">
-              {REASONS.map((reason, i) => (
-                <motion.div
-                  key={reason.title}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: i * 0.07 }}
-                  className="flex gap-4 rounded-lg border border-border/20 bg-card/50 p-4 transition-colors hover:border-accent/30 hover:bg-card/80"
+            <motion.div
+              key={REASONS[activeIndex]?.title}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.25 }}
+              className="mt-4 flex flex-col gap-4"
+            >
+              <div className="flex gap-4 rounded-lg border border-border/20 bg-card/50 p-4 transition-colors">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                  {(() => {
+                    const Icon = REASONS[activeIndex].icon
+                    return <Icon className="h-5 w-5 text-accent" />
+                  })()}
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground">
+                    {REASONS[activeIndex].title}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    {REASONS[activeIndex].description}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between text-xs text-muted-foreground">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveIndex(
+                      (prev) => (prev - 1 + REASONS.length) % REASONS.length,
+                    )
+                  }
+                  className="rounded-full border border-border/30 px-3 py-1 hover:border-accent/50 hover:text-accent"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10">
-                    <reason.icon className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-foreground">
-                      {reason.title}
-                    </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                      {reason.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveIndex((prev) => (prev + 1) % REASONS.length)
+                  }
+                  className="rounded-full border border-border/30 px-3 py-1 hover:border-accent/50 hover:text-accent"
+                >
+                  Next
+                </button>
+              </div>
+            </motion.div>
           )}
         </AnimatePresence>
 

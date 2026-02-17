@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { CalendarDays } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
 
 interface BookingModalContextType {
   openModal: () => void
@@ -49,6 +50,16 @@ function BookingModal({
   open: boolean
   onOpenChange: (open: boolean) => void
 }) {
+  const [selectedConcern, setSelectedConcern] = useState<string | null>(null)
+
+  const concerns = [
+    "Equity compensation",
+    "R&D tax credits",
+    "Entity structure",
+    "Multi-state / remote team",
+    "Upcoming exit or liquidity event",
+  ]
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="glass-card border-border/30 sm:max-w-lg">
@@ -118,6 +129,41 @@ function BookingModal({
               rows={3}
               className="border-border/30 bg-background/50 resize-none"
             />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <Label className="text-sm text-foreground">
+              What&apos;s your biggest tax concern?
+              <span className="ml-1 text-xs font-normal text-muted-foreground">
+                (Optional)
+              </span>
+            </Label>
+            <div className="flex flex-wrap gap-2">
+              {concerns.map((concern) => {
+                const isSelected = selectedConcern === concern
+                return (
+                  <button
+                    key={concern}
+                    type="button"
+                    onClick={() =>
+                      setSelectedConcern(isSelected ? null : concern)
+                    }
+                    className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  >
+                    <Badge
+                      variant={isSelected ? "default" : "secondary"}
+                      className={
+                        isSelected
+                          ? "border-transparent bg-accent text-accent-foreground hover:bg-accent/90"
+                          : "border-border/40 bg-background/40 text-foreground hover:bg-background/70"
+                      }
+                    >
+                      {concern}
+                    </Badge>
+                  </button>
+                )
+              })}
+            </div>
           </div>
 
           <Button
