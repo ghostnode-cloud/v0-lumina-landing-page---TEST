@@ -41,10 +41,10 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 
 ## 5. Motion & Micro-Interactions
 
-- [ ] **5.1** Vary scroll animation stagger per section (e.g. trust strip from center outward, pricing left-to-right) so the page doesn’t feel repetitive.
-- [ ] **5.2** (Optional) Add “Book a call” FAB on mobile (e.g. bottom-left) alongside or instead of only back-to-top when appropriate.
-- [ ] **5.3** Add subtle hover enhancement on method/pricing cards (e.g. accent gradient border or icon animation) while keeping existing glass-card-hover.
-- [ ] **5.4** Audit and ensure visible focus states (keyboard) on all interactive elements: nav links, CTAs, accordion triggers, carousel buttons, modal inputs.
+- [x] **5.1** Vary scroll animation stagger per section (e.g. trust strip from center outward, pricing left-to-right) so the page doesn’t feel repetitive.
+- [x] **5.2** (Optional) Add “Book a call” FAB on mobile (e.g. bottom-left) alongside or instead of only back-to-top when appropriate.
+- [x] **5.3** Add subtle hover enhancement on method/pricing cards (e.g. accent gradient border or icon animation) while keeping existing glass-card-hover.
+- [x] **5.4** Audit and ensure visible focus states (keyboard) on all interactive elements: nav links, CTAs, accordion triggers, carousel buttons, modal inputs.
 
 ---
 
@@ -96,7 +96,7 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 | 2. Navigation & Wayfinding    | 3    | 3     |
 | 3. Sections & Content        | 6    | 6     |
 | 4. Modals & Forms            | 3    | 3     |
-| 5. Motion & Micro-Interactions | 0  | 4     |
+| 5. Motion & Micro-Interactions | 4  | 4     |
 | 6. Responsive & Layout       | 0    | 3     |
 | 7. Copy & Consistency        | 0    | 3     |
 | 8. Performance               | 0    | 3     |

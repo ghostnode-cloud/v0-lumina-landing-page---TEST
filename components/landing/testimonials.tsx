@@ -9,7 +9,7 @@ import { ScrollAnimation } from "./scroll-animation"
 const testimonials = [
   {
     quote:
-      "Marcus saved us over $380K in our first year by restructuring how we handle equity comp across the team. No other CPA even suggested it.",
+      "Marcus saved us over £380K in our first year by restructuring how we handle equity comp across the team. No other CPA even suggested it.",
     name: "Sarah Lin",
     title: "CEO, Vertex AI",
     initials: "SL",
@@ -145,20 +145,20 @@ export function Testimonials() {
               )}
 
               <div className="flex items-center justify-center gap-4">
-              <button
-                onClick={scrollPrev}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border/30 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </button>
+                <button
+                  onClick={scrollPrev}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-border/30 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </button>
 
               <div className="flex gap-2">
                 {testimonials.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => emblaApi?.scrollTo(index)}
-                    className={`h-2 rounded-full transition-all ${
+                    className={`h-2 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                       index === selectedIndex
                         ? "w-6 bg-accent"
                         : "w-2 bg-muted-foreground/30"
@@ -168,17 +168,17 @@ export function Testimonials() {
                 ))}
               </div>
 
-              <span className="min-w-[52px] text-center font-mono text-xs text-muted-foreground">
-                {selectedIndex + 1} / {testimonials.length}
-              </span>
+                <span className="min-w-[52px] text-center font-mono text-xs text-muted-foreground">
+                  {selectedIndex + 1} / {testimonials.length}
+                </span>
 
-              <button
-                onClick={scrollNext}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border/30 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                aria-label="Next testimonial"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </button>
+                <button
+                  onClick={scrollNext}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-border/30 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </button>
               </div>
             </div>
           </div>

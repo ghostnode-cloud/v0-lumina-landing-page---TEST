@@ -53,7 +53,7 @@ export function LuminaMethod() {
             <motion.div
               key={method.title}
               variants={staggerItemVariants}
-              className={`glass-card-hover relative flex flex-col gap-4 p-8 ${
+              className={`glass-card-hover group relative flex flex-col gap-4 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
                 method.featured
                   ? "border-accent/40 ring-1 ring-accent/20 lg:-translate-y-1 lg:scale-[1.03]"
                   : ""
@@ -64,7 +64,7 @@ export function LuminaMethod() {
                   Featured
                 </Badge>
               )}
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 transition-transform duration-300 group-hover:scale-110 group-hover:bg-accent/20">
                 <method.icon className="h-6 w-6 text-accent" />
               </div>
               <h3 className="text-lg font-semibold text-foreground">

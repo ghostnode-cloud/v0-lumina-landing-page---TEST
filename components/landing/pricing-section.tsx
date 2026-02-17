@@ -15,7 +15,7 @@ const tiers = [
   {
     name: "Launchpad",
     audience: "For early-stage founders",
-    price: "$500",
+    price: "£500",
     period: "/mo",
     highlighted: false,
     features: [
@@ -29,7 +29,7 @@ const tiers = [
   {
     name: "Scaleup",
     audience: "For funded startups",
-    price: "$1,500",
+    price: "£1,500",
     period: "/mo",
     highlighted: true,
     features: [
@@ -48,7 +48,7 @@ const tiers = [
     price: "Custom",
     period: "",
     highlighted: false,
-    note: "Typical engagement: $3K–$8K/mo",
+    note: "Typical engagement: £3K–£8K/mo",
     features: [
       "Dedicated advisory relationship",
       "Full-spectrum tax + compliance",
@@ -80,14 +80,17 @@ export function PricingSection() {
           </p>
         </ScrollAnimation>
 
-        <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <StaggerContainer
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          staggerDelay={0.15}
+        >
           {tiers.map((tier) => (
             <motion.div
               key={tier.name}
               variants={staggerItemVariants}
-              className={`glass-card-hover relative flex flex-col p-8 ${
+              className={`glass-card-hover group relative flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
                 tier.highlighted
-                  ? "border-accent/40 ring-1 ring-accent/20 lg:scale-105"
+                  ? "border-accent/40 ring-1 ring-accent/20 hover:border-accent/60 hover:ring-accent/40 lg:scale-105"
                   : ""
               }`}
             >

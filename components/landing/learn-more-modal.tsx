@@ -30,9 +30,9 @@ const REASONS = [
   },
   {
     icon: TrendingUp,
-    title: "Average $47K Saved Annually",
+    title: "Average £47K Saved Annually",
     description:
-      "Lumina clients save an average of $47,000 per year through proactive tax planning, entity optimization, and strategic timing of income and deductions.",
+      "Lumina clients save an average of £47,000 per year through proactive tax planning, entity optimization, and strategic timing of income and deductions.",
   },
   {
     icon: Brain,

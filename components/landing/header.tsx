@@ -90,7 +90,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-sm font-medium transition-colors focus-visible:outline-none focus-visible:text-foreground focus-visible:underline focus-visible:underline-offset-8 focus-visible:decoration-accent ${
                 activeSection === link.href.replace("#", "")
                   ? "text-foreground underline underline-offset-8 decoration-accent"
                   : "text-muted-foreground hover:text-foreground"
