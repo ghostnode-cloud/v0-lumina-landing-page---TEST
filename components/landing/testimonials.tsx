@@ -36,6 +36,7 @@ export function Testimonials() {
     align: "center",
   })
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const [showSwipeHint, setShowSwipeHint] = useState(false)
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
@@ -58,6 +59,29 @@ export function Testimonials() {
       emblaApi.off("select", onSelect)
     }
   }, [emblaApi, onSelect])
+
+  useEffect(() => {
+    const key = "lumina_testimonials_swipe_hint_seen"
+    const isMobile =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(max-width: 639px)").matches
+
+    if (!isMobile) return
+
+    try {
+      const alreadySeen = window.localStorage.getItem(key) === "1"
+      if (alreadySeen) return
+      window.localStorage.setItem(key, "1")
+      setShowSwipeHint(true)
+      const t = window.setTimeout(() => setShowSwipeHint(false), 3000)
+      return () => window.clearTimeout(t)
+    } catch {
+      // If storage is blocked, fall back to a one-time-per-mount hint.
+      setShowSwipeHint(true)
+      const t = window.setTimeout(() => setShowSwipeHint(false), 2500)
+      return () => window.clearTimeout(t)
+    }
+  }, [])
 
   return (
     <section className="py-24 sm:py-32">
@@ -111,7 +135,16 @@ export function Testimonials() {
             </div>
 
             {/* Navigation */}
-            <div className="mt-8 flex items-center justify-center gap-4">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3">
+              {showSwipeHint && (
+                <div className="sm:hidden">
+                  <span className="rounded-full border border-border/30 bg-background/30 px-3 py-1 text-xs text-muted-foreground">
+                    Swipe for more
+                  </span>
+                </div>
+              )}
+
+              <div className="flex items-center justify-center gap-4">
               <button
                 onClick={scrollPrev}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-border/30 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
@@ -135,6 +168,10 @@ export function Testimonials() {
                 ))}
               </div>
 
+              <span className="min-w-[52px] text-center font-mono text-xs text-muted-foreground">
+                {selectedIndex + 1} / {testimonials.length}
+              </span>
+
               <button
                 onClick={scrollNext}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-border/30 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
@@ -142,6 +179,7 @@ export function Testimonials() {
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
+              </div>
             </div>
           </div>
         </ScrollAnimation>

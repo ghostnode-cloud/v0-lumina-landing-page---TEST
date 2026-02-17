@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { TrendingUp, Shield, Coins } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
 import {
   StaggerContainer,
   staggerItemVariants,
@@ -26,6 +27,7 @@ const methods = [
     title: "Founder-Focused Optimization",
     description:
       "Stock options, equity compensation, exit planning -- we specialize in the financial complexities unique to tech founders and startup leadership teams.",
+    featured: true,
   },
 ]
 
@@ -51,8 +53,17 @@ export function LuminaMethod() {
             <motion.div
               key={method.title}
               variants={staggerItemVariants}
-              className="glass-card-hover flex flex-col gap-4 p-8"
+              className={`glass-card-hover relative flex flex-col gap-4 p-8 ${
+                method.featured
+                  ? "border-accent/40 ring-1 ring-accent/20 lg:-translate-y-1 lg:scale-[1.03]"
+                  : ""
+              }`}
             >
+              {method.featured && (
+                <Badge className="absolute right-6 top-6 bg-accent text-accent-foreground hover:bg-accent">
+                  Featured
+                </Badge>
+              )}
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
                 <method.icon className="h-6 w-6 text-accent" />
               </div>

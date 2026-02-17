@@ -1,6 +1,7 @@
 "use client"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ScrollAnimation } from "./scroll-animation"
 import { useBookingModal } from "./booking-modal"
@@ -37,8 +38,28 @@ export function MeetMarcus() {
                   Meet Your Strategist
                 </span>
                 <h2 className="font-serif text-3xl text-foreground sm:text-4xl">
-                  Marcus Chen, CPA
+                  Marcus Chen
                 </h2>
+                <div className="mt-3 flex flex-wrap items-center justify-center gap-2 md:justify-start">
+                  <Badge
+                    variant="secondary"
+                    className="border border-border/30 bg-background/30 text-foreground"
+                  >
+                    CPA
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="border border-border/30 bg-background/30 text-foreground"
+                  >
+                    10+ years advising startups
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="border border-border/30 bg-background/30 text-foreground"
+                  >
+                    Former Big 4
+                  </Badge>
+                </div>
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
                   After a decade advising high-growth startups and their founders
                   at top-tier firms, Marcus launched Lumina to do things

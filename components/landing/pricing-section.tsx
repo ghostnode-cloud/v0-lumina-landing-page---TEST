@@ -48,6 +48,7 @@ const tiers = [
     price: "Custom",
     period: "",
     highlighted: false,
+    note: "Typical engagement: $3K–$8K/mo",
     features: [
       "Dedicated advisory relationship",
       "Full-spectrum tax + compliance",
@@ -111,6 +112,11 @@ export function PricingSection() {
                 </span>
                 {tier.period && (
                   <span className="text-muted-foreground">{tier.period}</span>
+                )}
+                {"note" in tier && tier.note && (
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {tier.note}
+                  </p>
                 )}
               </div>
 

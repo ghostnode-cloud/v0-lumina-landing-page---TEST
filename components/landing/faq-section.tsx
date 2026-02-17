@@ -6,7 +6,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
 import { ScrollAnimation } from "./scroll-animation"
+import { useBookingModal } from "./booking-modal"
 
 const faqs = [
   {
@@ -37,6 +40,8 @@ const faqs = [
 ]
 
 export function FaqSection() {
+  const { openModal } = useBookingModal()
+
   return (
     <section id="faq" className="border-y border-border/30 bg-muted/30 py-24 sm:py-32">
       <div className="section-container">
@@ -66,6 +71,26 @@ export function FaqSection() {
               </AccordionItem>
             ))}
           </Accordion>
+        </ScrollAnimation>
+
+        <ScrollAnimation className="mx-auto mt-12 max-w-3xl">
+          <div className="glass-card flex flex-col items-center justify-between gap-4 p-8 text-center sm:flex-row sm:text-left">
+            <div>
+              <p className="text-base font-semibold text-foreground">
+                Still have questions?
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Book a quick call and get direct answers from Marcus.
+              </p>
+            </div>
+            <Button
+              onClick={openModal}
+              className="group bg-accent text-accent-foreground hover:bg-accent/90"
+            >
+              Book a call
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </div>
         </ScrollAnimation>
       </div>
     </section>
