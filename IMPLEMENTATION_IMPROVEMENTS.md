@@ -50,9 +50,9 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 
 ## 6. Responsive & Layout
 
-- [ ] **6.1** Trust strip: Verify vertical rhythm and tap target size on mobile 2×2 grid.
-- [ ] **6.2** Pricing: Check Scaleup card (`lg:scale-105`) at 768–1024px for cramped or cut-off layout; adjust if needed.
-- [ ] **6.3** Footer bento: On very narrow viewports, consider stack order so CTA cell appears earlier (e.g. second or third) for better visibility.
+- [x] **6.1** Trust strip: Verify vertical rhythm and tap target size on mobile 2×2 grid.
+- [x] **6.2** Pricing: Check Scaleup card (`lg:scale-105`) at 768–1024px for cramped or cut-off layout; adjust if needed.
+- [x] **6.3** Footer bento: On very narrow viewports, consider stack order so CTA cell appears earlier (e.g. second or third) for better visibility.
 
 ---
 
@@ -97,7 +97,7 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 | 3. Sections & Content        | 6    | 6     |
 | 4. Modals & Forms            | 3    | 3     |
 | 5. Motion & Micro-Interactions | 4  | 4     |
-| 6. Responsive & Layout       | 0    | 3     |
+| 6. Responsive & Layout       | 3    | 3     |
 | 7. Copy & Consistency        | 0    | 3     |
 | 8. Performance               | 0    | 3     |
 | 9. Accessibility             | 0    | 3     |

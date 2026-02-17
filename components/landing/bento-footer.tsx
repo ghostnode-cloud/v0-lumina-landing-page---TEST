@@ -44,8 +44,25 @@ export function BentoFooter() {
               </p>
             </div>
 
-            {/* Box 2: Contact */}
-            <div className="flex flex-col gap-6 bg-[#0A0F1C] p-8 sm:p-10">
+            {/* Box 2: Final CTA (surface this earlier on mobile) */}
+            <div className="order-2 flex flex-col items-start justify-center bg-[#0A0F1C] p-8 sm:order-2 sm:p-10 md:order-none">
+              <h3 className="font-serif text-2xl text-foreground sm:text-3xl">
+                Ready to optimize?
+              </h3>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Stop overpaying the IRS. Start building a real tax strategy.
+              </p>
+              <Button
+                onClick={openModal}
+                className="group mt-6 bg-accent text-accent-foreground hover:bg-accent/90"
+              >
+                Book Your Tax Strategy Session
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
+
+            {/* Box 3: Contact */}
+            <div className="order-3 flex flex-col gap-6 bg-[#0A0F1C] p-8 sm:order-3 sm:p-10 md:order-none">
               <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 Get in Touch
               </h3>
@@ -69,8 +86,8 @@ export function BentoFooter() {
               </div>
             </div>
 
-            {/* Box 3: Navigation */}
-            <div className="flex flex-col gap-6 bg-[#0A0F1C] p-8 sm:p-10">
+            {/* Box 4: Navigation */}
+            <div className="order-4 flex flex-col gap-6 bg-[#0A0F1C] p-8 sm:order-4 sm:p-10 md:order-none">
               <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 Navigate
               </h3>
@@ -97,22 +114,7 @@ export function BentoFooter() {
               </nav>
             </div>
 
-            {/* Box 4: Final CTA */}
-            <div className="flex flex-col items-start justify-center bg-[#0A0F1C] p-8 sm:p-10">
-              <h3 className="font-serif text-2xl text-foreground sm:text-3xl">
-                Ready to optimize?
-              </h3>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Stop overpaying the IRS. Start building a real tax strategy.
-              </p>
-              <Button
-                onClick={openModal}
-                className="group mt-6 bg-accent text-accent-foreground hover:bg-accent/90"
-              >
-                Book Your Strategy Session
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </div>
+           
           </div>
         </ScrollAnimation>
       </div>

@@ -90,7 +90,7 @@ export function PricingSection() {
               variants={staggerItemVariants}
               className={`glass-card-hover group relative flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
                 tier.highlighted
-                  ? "border-accent/40 ring-1 ring-accent/20 hover:border-accent/60 hover:ring-accent/40 lg:scale-105"
+                  ? "border-accent/40 ring-1 ring-accent/20 hover:border-accent/60 hover:ring-accent/40 md:border-accent/40 md:ring-accent/20 lg:-translate-y-1 lg:scale-[1.03]"
                   : ""
               }`}
             >

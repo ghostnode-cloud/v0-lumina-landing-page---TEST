@@ -18,15 +18,15 @@ export function TrustStrip() {
     <section className="relative border-y border-border/30 bg-muted/50 py-12 sm:py-16">
       <div className="section-container">
         <ScrollAnimation>
-          <p className="mb-8 text-center text-sm font-medium uppercase tracking-widest text-muted-foreground">
+          <p className="mb-4 text-center text-xs font-medium uppercase tracking-widest text-muted-foreground sm:mb-8 sm:text-sm">
             Trusted by founders at
           </p>
-          <p className="mx-auto mb-10 max-w-xl text-center text-xs text-muted-foreground/80 sm:text-sm">
+          <p className="mx-auto mb-8 max-w-xl text-center text-xs text-muted-foreground/80 sm:mb-10 sm:text-sm">
             Tech accelerators · Series A+ startups · VC-backed teams
           </p>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-border/30">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-border/30">
           {stats.map((stat, index) => {
             const position = order.indexOf(index)
             const delay = position >= 0 ? position * baseDelay : index * baseDelay
@@ -35,7 +35,7 @@ export function TrustStrip() {
               <ItemAnimation
                 key={stat.label}
                 delay={delay}
-                className="flex flex-col items-center gap-2 text-center lg:px-8"
+                className="flex flex-col items-center gap-2 rounded-lg px-2 py-3 text-center sm:px-4 sm:py-4 lg:rounded-none lg:px-8 lg:py-0"
               >
                 <span className="font-mono text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
                   {stat.value}
