@@ -1,11 +1,13 @@
 "use client"
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ScrollAnimation } from "./scroll-animation"
 import { useBookingModal } from "./booking-modal"
 import { ArrowRight } from "lucide-react"
+
+import Image from "next/image"
 
 export function MeetMarcus() {
   const { openModal } = useBookingModal()
@@ -21,10 +23,15 @@ export function MeetMarcus() {
                 <div className="relative">
                   <div className="absolute -inset-1 rounded-full bg-accent/20 blur-md" />
                   <Avatar className="relative h-40 w-40 border-2 border-accent/30 sm:h-48 sm:w-48 md:h-56 md:w-56">
-                    <AvatarImage
-                      src="/placeholder-marcus.jpg"
-                      alt="Marcus Chen, CPA - Founder of Lumina Tax & Advisory"
-                    />
+                    <div className="relative h-full w-full overflow-hidden rounded-full">
+                      <Image
+                        src="/placeholder-marcus.jpg"
+                        alt="Marcus Chen, CPA - Founder of Lumina Tax & Advisory"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 160px, (max-width: 768px) 192px, 224px"
+                      />
+                    </div>
                     <AvatarFallback className="bg-muted text-3xl font-serif text-foreground">
                       MC
                     </AvatarFallback>

@@ -2,9 +2,10 @@
 
 import { useCallback, useEffect, useState } from "react"
 import useEmblaCarousel from "embla-carousel-react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react"
 import { ScrollAnimation } from "./scroll-animation"
+import Image from "next/image"
 
 const testimonials = [
   {
@@ -111,10 +112,15 @@ export function Testimonials() {
                       </blockquote>
                       <div className="flex items-center gap-4">
                         <Avatar className="h-10 w-10 border border-border/30">
-                          <AvatarImage
-                            src={`/placeholder-${testimonial.initials.toLowerCase()}.jpg`}
-                            alt={testimonial.name}
-                          />
+                          <div className="relative h-full w-full overflow-hidden rounded-full">
+                            <Image
+                              src={`/placeholder-${testimonial.initials.toLowerCase()}.jpg`}
+                              alt={testimonial.name}
+                              fill
+                              className="object-cover"
+                              sizes="40px"
+                            />
+                          </div>
                           <AvatarFallback className="bg-muted text-xs text-foreground">
                             {testimonial.initials}
                           </AvatarFallback>
@@ -153,20 +159,19 @@ export function Testimonials() {
                   <ChevronLeft className="h-4 w-4" />
                 </button>
 
-              <div className="flex gap-2">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => emblaApi?.scrollTo(index)}
-                    className={`h-2 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
-                      index === selectedIndex
-                        ? "w-6 bg-accent"
-                        : "w-2 bg-muted-foreground/30"
-                    }`}
-                    aria-label={`Go to testimonial ${index + 1}`}
-                  />
-                ))}
-              </div>
+                <div className="flex gap-2">
+                  {testimonials.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => emblaApi?.scrollTo(index)}
+                      className={`h-2 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background ${index === selectedIndex
+                          ? "w-6 bg-accent"
+                          : "w-2 bg-muted-foreground/30"
+                        }`}
+                      aria-label={`Go to testimonial ${index + 1}`}
+                    />
+                  ))}
+                </div>
 
                 <span className="min-w-[52px] text-center font-mono text-xs text-muted-foreground">
                   {selectedIndex + 1} / {testimonials.length}

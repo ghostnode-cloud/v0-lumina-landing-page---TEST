@@ -66,9 +66,9 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 
 ## 8. Performance & Perceived Speed
 
-- [ ] **8.1** Verify Instrument Serif + Geist have appropriate fallback metrics to prevent layout shift (e.g. hero text).
-- [ ] **8.2** Use Next.js `Image` with correct `sizes` for Marcus headshot and testimonial avatars (and any future images).
-- [ ] **8.3** Keep booking and Learn More modal content light; if adding images or long copy later, consider lazy-rendering so first open stays fast.
+- [x] **8.1** Verify Instrument Serif + Geist have appropriate fallback metrics to prevent layout shift (e.g. hero text).
+- [x] **8.2** Use Next.js `Image` with correct `sizes` for Marcus headshot and testimonial avatars (and any future images).
+- [x] **8.3** Keep booking and Learn More modal content light; if adding images or long copy later, consider lazy-rendering so first open stays fast.
 
 ---
 
@@ -99,9 +99,9 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 | 5. Motion & Micro-Interactions | 4  | 4     |
 | 6. Responsive & Layout       | 3    | 3     |
 | 7. Copy & Consistency        | 3    | 3     |
-| 8. Performance               | 0    | 3     |
+| 8. Performance               | 3    | 3     |
 | 9. Accessibility             | 0    | 3     |
 | 10. Small Wins               | 0    | 3     |
-| **Total**                    | **18**| **34**|
+| **Total**                    | **21**| **34**|
 
 *Update the “Done” counts as you complete items. Optional items still count in Total if you choose to implement them.*
