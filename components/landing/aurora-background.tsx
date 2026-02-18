@@ -1,6 +1,6 @@
 "use client"
-
-import { motion } from "framer-motion"
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
+import { useEffect } from "react"
 
 const orbs = [
   {
@@ -16,6 +16,7 @@ const orbs = [
     },
     duration: 22,
     position: "left-[10%] top-[5%]" as const,
+    parallax: 0.05,
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ const orbs = [
     },
     duration: 18,
     position: "right-[5%] top-[15%]" as const,
+    parallax: -0.05,
   },
   {
     id: 3,
@@ -44,6 +46,7 @@ const orbs = [
     },
     duration: 25,
     position: "left-[30%] bottom-[5%]" as const,
+    parallax: 0.03,
   },
   {
     id: 4,
@@ -58,36 +61,61 @@ const orbs = [
     },
     duration: 20,
     position: "right-[20%] bottom-[20%]" as const,
+    parallax: -0.02,
   },
 ]
 
 export function AuroraBackground() {
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseX.set(e.clientX - window.innerWidth / 2)
+      mouseY.set(e.clientY - window.innerHeight / 2)
+    }
+
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => window.removeEventListener("mousemove", handleMouseMove)
+  }, [mouseX, mouseY])
+
+  const springConfig = { damping: 25, stiffness: 150 }
+  const springX = useSpring(mouseX, springConfig)
+  const springY = useSpring(mouseY, springConfig)
+
   return (
     <div
       className="pointer-events-none absolute inset-0 overflow-hidden"
       aria-hidden="true"
     >
       {/* Aurora orbs */}
-      {orbs.map((orb) => (
-        <motion.div
-          key={orb.id}
-          className={`absolute ${orb.position} ${orb.className}`}
-          style={{
-            background: orb.gradient,
-            filter: "blur(100px)",
-            mixBlendMode: "screen",
-            willChange: "transform",
-          }}
-          initial={orb.initial}
-          animate={orb.animate}
-          transition={{
-            duration: orb.duration,
-            repeat: Infinity,
-            repeatType: "mirror",
-            ease: "easeInOut",
-          }}
-        />
-      ))}
+      {orbs.map((orb) => {
+        const x = useTransform(springX, (val) => val * orb.parallax)
+        const y = useTransform(springY, (val) => val * orb.parallax)
+
+        return (
+          <motion.div
+            key={orb.id}
+            className={`absolute ${orb.position} ${orb.className}`}
+            style={{
+              background: orb.gradient,
+              filter: "blur(100px)",
+              mixBlendMode: "screen",
+              willChange: "transform",
+              x,
+              y,
+            }}
+            initial={orb.initial}
+            animate={orb.animate}
+            transition={{
+              duration: orb.duration,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: "easeInOut",
+            }}
+          />
+        )
+      })}
 
       {/* Radial vignette overlay -- darker at edges */}
       <div

@@ -88,6 +88,23 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 
 ---
 
+## 11. Hero Impact & Dynamic Depth
+
+- [x] **11.1** Implement mouse-reactive "Strategic Insight" card in Hero (3D tilt & glow) to visualize the product.
+- [x] **11.2** Add interactive mesh gradient or dynamic aura background to Hero that responds to mouse movement.
+- [x] **11.3** Apply staggered word-by-word or line-by-line entrance animations to Hero headline for a premium feel.
+
+---
+
+## 12. Modern Bento & Glass Overhaul
+
+- [ ] **12.1** Convert "Lumina Method" section from standard cards to an asymmetric Bento Grid layout for better rhythm.
+- [ ] **12.2** Redesign main navigation as a floating pill-shaped "Glass" bar with `backdrop-blur` and adaptive styling.
+- [ ] **12.3** Audit and apply consistent Glassmorphism (thin glowing borders + backdrop blur) to all cards and modals.
+- [ ] **12.4** Implement physics-based spring animations for all card hover states and scroll-entrance transitions.
+
+---
+
 ## Progress Summary
 
 | Category                      | Done | Total |
@@ -102,6 +119,8 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 | 8. Performance               | 3    | 3     |
 | 9. Accessibility             | 0    | 3     |
 | 10. Small Wins               | 0    | 3     |
-| **Total**                    | **21**| **34**|
+| 11. Hero Impact              | 3    | 3     |
+| 12. Bento & Glass            | 0    | 4     |
+| **Total**                    | **24**| **41**|
 
 *Update the “Done” counts as you complete items. Optional items still count in Total if you choose to implement them.*

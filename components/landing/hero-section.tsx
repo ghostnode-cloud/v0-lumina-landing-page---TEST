@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Info } from "lucide-react"
 import { useBookingModal } from "./booking-modal"
 import { LearnMoreModal } from "./learn-more-modal"
+import { StrategicInsightCard } from "./strategic-insight-card"
 import { AuroraBackground } from "./aurora-background"
 
 export function HeroSection() {
@@ -36,74 +37,99 @@ export function HeroSection() {
       />
 
       <div className="section-container relative z-10">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-8">
+          <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <span className="mb-6 inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-accent">
+                Tax Strategy for Innovators
+              </span>
+            </motion.div>
+
+            <h1 className="font-serif text-4xl leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+              <span className="sr-only">
+                Modern tax strategy for people who build the future.
+              </span>
+              <div className="flex flex-wrap justify-center lg:justify-start" aria-hidden="true">
+                {"Modern tax strategy for people who build the future."
+                  .split(" ")
+                  .map((word, i) => (
+                    <motion.span
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.8,
+                        delay: 0.2 + i * 0.05,
+                        ease: [0.215, 0.61, 0.355, 1],
+                      }}
+                      className="mr-[0.25em] inline-block last:mr-0"
+                    >
+                      {word}
+                    </motion.span>
+                  ))}
+              </div>
+            </h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl"
+            >
+              <span className="md:hidden">
+                One strategist. Full attention. Real results.
+              </span>
+              <span className="hidden md:inline">
+                Cutting-edge tax optimization for tech founders and growth-focused
+                businesses. One strategist. Full attention. Real results.
+              </span>
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-10 flex flex-col items-center gap-4 lg:items-start"
+            >
+              <div className="flex flex-col items-center gap-3 sm:flex-row">
+                <Button
+                  onClick={openModal}
+                  size="lg"
+                  className="group bg-accent px-8 py-6 text-base font-medium text-accent-foreground hover:bg-accent/90"
+                >
+                  Book Your Tax Strategy Session
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+                <LearnMoreModal
+                  trigger={
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="group border-border/40 bg-transparent px-6 py-6 text-base font-medium text-foreground hover:border-accent/50 hover:bg-accent/5 hover:text-accent"
+                    >
+                      <Info className="mr-2 h-4 w-4" />
+                      Learn More
+                    </Button>
+                  }
+                />
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Direct access to Marcus Chen — no gatekeepers.
+              </p>
+            </motion.div>
+          </div>
+
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.215, 0.61, 0.355, 1] }}
+            className="flex justify-center"
           >
-            <span className="mb-6 inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-accent">
-              Tax Strategy for Innovators
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-serif text-4xl leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            <span className="text-balance">
-              Modern tax strategy for people who build the future.
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl"
-          >
-            <span className="md:hidden">
-              One strategist. Full attention. Real results.
-            </span>
-            <span className="hidden md:inline">
-              Cutting-edge tax optimization for tech founders and growth-focused
-              businesses. One strategist. Full attention. Real results.
-            </span>
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-10 flex flex-col items-center gap-4"
-          >
-            <div className="flex flex-col items-center gap-3 sm:flex-row">
-              <Button
-                onClick={openModal}
-                size="lg"
-                className="group bg-accent px-8 py-6 text-base font-medium text-accent-foreground hover:bg-accent/90"
-              >
-                Book Your Tax Strategy Session
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <LearnMoreModal
-                trigger={
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="group border-border/40 bg-transparent px-6 py-6 text-base font-medium text-foreground hover:border-accent/50 hover:bg-accent/5 hover:text-accent"
-                  >
-                    <Info className="mr-2 h-4 w-4" />
-                    Learn More
-                  </Button>
-                }
-              />
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Direct access to Marcus Chen — no gatekeepers.
-            </p>
+            <StrategicInsightCard />
           </motion.div>
         </div>
       </div>
