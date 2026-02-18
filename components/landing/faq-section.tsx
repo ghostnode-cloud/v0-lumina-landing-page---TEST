@@ -55,17 +55,17 @@ export function FaqSection() {
         </ScrollAnimation>
 
         <ScrollAnimation className="mx-auto max-w-3xl">
-          <Accordion type="single" collapsible className="flex flex-col gap-3">
+          <Accordion type="single" collapsible className="flex flex-col gap-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="glass-card border-none px-6"
+                className="glass-card-hover border-white/5 px-6 transition-all duration-300"
               >
-                <AccordionTrigger className="py-5 text-left text-base font-medium text-foreground hover:no-underline hover:text-accent focus-visible:outline-none focus-visible:text-accent">
+                <AccordionTrigger className="py-5 text-left text-base font-bold tracking-tight text-foreground hover:no-underline hover:text-accent focus-visible:outline-none focus-visible:text-accent">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="pb-5 text-base leading-relaxed text-muted-foreground">
+                <AccordionContent className="pb-5 text-base leading-relaxed text-muted-foreground/80">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -73,23 +73,27 @@ export function FaqSection() {
           </Accordion>
         </ScrollAnimation>
 
-        <ScrollAnimation className="mx-auto mt-12 max-w-3xl">
-          <div className="glass-card flex flex-col items-center justify-between gap-4 p-8 text-center sm:flex-row sm:text-left">
-            <div>
-              <p className="text-base font-semibold text-foreground">
-                Still have questions?
-              </p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Book your tax strategy session and get direct answers from Marcus.
-              </p>
+        <ScrollAnimation className="mx-auto mt-16 max-w-3xl">
+          <div className="glass-card relative overflow-hidden border-accent/20 p-8 sm:p-10">
+            <div className="absolute -right-[10%] -top-[20%] h-40 w-40 rounded-full bg-accent/20 blur-3xl" />
+            <div className="relative z-10 flex flex-col items-center justify-between gap-6 text-center sm:flex-row sm:text-left">
+              <div>
+                <p className="text-xl font-bold tracking-tight text-foreground">
+                  Still have questions?
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Book your tax strategy session and get direct answers from Marcus.
+                </p>
+              </div>
+              <Button
+                onClick={openModal}
+                size="lg"
+                className="group w-full bg-accent text-accent-foreground hover:bg-accent/90 sm:w-auto"
+              >
+                Book Your Session
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
             </div>
-            <Button
-              onClick={openModal}
-              className="group bg-accent text-accent-foreground hover:bg-accent/90"
-            >
-              Book Your Tax Strategy Session
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
           </div>
         </ScrollAnimation>
       </div>

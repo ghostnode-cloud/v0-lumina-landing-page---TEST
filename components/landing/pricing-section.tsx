@@ -88,12 +88,14 @@ export function PricingSection() {
             <motion.div
               key={tier.name}
               variants={staggerItemVariants}
-              className={`glass-card-hover group relative flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                tier.highlighted
-                  ? "border-accent/40 ring-1 ring-accent/20 hover:border-accent/60 hover:ring-accent/40 md:border-accent/40 md:ring-accent/20 lg:-translate-y-1 lg:scale-[1.03]"
-                  : ""
-              }`}
+              className={`glass-card-hover group relative flex flex-col p-8 ${tier.highlighted
+                  ? "border-accent/30 ring-1 ring-accent/10 lg:scale-[1.03] lg:-translate-y-2 lg:z-10"
+                  : "border-white/5"
+                }`}
             >
+              {tier.highlighted && (
+                <div className="absolute -inset-0.5 rounded-[inherit] bg-gradient-to-br from-accent/20 to-transparent blur-md opacity-50" />
+              )}
               {tier.highlighted && (
                 <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground hover:bg-accent">
                   Most Popular
@@ -137,11 +139,10 @@ export function PricingSection() {
 
               <Button
                 onClick={openModal}
-                className={`w-full ${
-                  tier.highlighted
+                className={`w-full ${tier.highlighted
                     ? "bg-accent text-accent-foreground hover:bg-accent/90"
                     : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-                }`}
+                  }`}
               >
                 {tier.price === "Custom"
                   ? "Get in Touch"

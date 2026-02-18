@@ -27,6 +27,7 @@ export default function Page() {
         <FaqSection />
       </main>
       <BentoFooter />
+      <div className="h-24 lg:hidden" aria-hidden="true" />
       <BackToTop />
       <MobileCtaBar />
     </BookingModalProvider>

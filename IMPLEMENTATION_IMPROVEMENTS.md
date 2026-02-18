@@ -98,10 +98,10 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 
 ## 12. Modern Bento & Glass Overhaul
 
-- [ ] **12.1** Convert "Lumina Method" section from standard cards to an asymmetric Bento Grid layout for better rhythm.
-- [ ] **12.2** Redesign main navigation as a floating pill-shaped "Glass" bar with `backdrop-blur` and adaptive styling.
-- [ ] **12.3** Audit and apply consistent Glassmorphism (thin glowing borders + backdrop blur) to all cards and modals.
-- [ ] **12.4** Implement physics-based spring animations for all card hover states and scroll-entrance transitions.
+- [x] **12.1** Convert "Lumina Method" section from standard cards to an asymmetric Bento Grid layout for better rhythm.
+- [x] **12.2** Redesign main navigation as a floating pill-shaped "Glass" bar with `backdrop-blur` and adaptive styling.
+- [x] **12.3** Audit and apply consistent Glassmorphism (thin glowing borders + backdrop blur) to all cards and modals.
+- [x] **12.4** Implement physics-based spring animations for all card hover states and scroll-entrance transitions.
 
 ---
 
@@ -120,7 +120,7 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 | 9. Accessibility             | 0    | 3     |
 | 10. Small Wins               | 0    | 3     |
 | 11. Hero Impact              | 3    | 3     |
-| 12. Bento & Glass            | 0    | 4     |
-| **Total**                    | **24**| **41**|
+| 12. Bento & Glass            | 4    | 4     |
+| **Total**                    | **28**| **41**|
 
 *Update the “Done” counts as you complete items. Optional items still count in Total if you choose to implement them.*

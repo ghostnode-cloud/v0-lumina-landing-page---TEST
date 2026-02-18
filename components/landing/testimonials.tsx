@@ -96,94 +96,103 @@ export function Testimonials() {
           </h2>
         </ScrollAnimation>
 
-        <ScrollAnimation>
-          <div className="relative">
-            <div ref={emblaRef} className="overflow-hidden">
-              <div className="flex">
-                {testimonials.map((testimonial) => (
-                  <div
-                    key={testimonial.name}
-                    className="min-w-0 flex-[0_0_100%] px-4 md:flex-[0_0_80%] lg:flex-[0_0_60%]"
-                  >
-                    <div className="glass-card flex flex-col gap-6 p-8 sm:p-10">
-                      <Quote className="h-8 w-8 text-accent/30" />
-                      <blockquote className="text-lg leading-relaxed text-foreground/90 italic">
-                        {`"${testimonial.quote}"`}
-                      </blockquote>
-                      <div className="flex items-center gap-4">
-                        <Avatar className="h-10 w-10 border border-border/30">
-                          <div className="relative h-full w-full overflow-hidden rounded-full">
-                            <Image
-                              src={`/placeholder-${testimonial.initials.toLowerCase()}.jpg`}
-                              alt={testimonial.name}
-                              fill
-                              className="object-cover"
-                              sizes="40px"
-                            />
+        <ScrollAnimation className="relative">
+          {/* Background glow for the card */}
+          <div className="absolute -inset-4 z-0 bg-accent/5 blur-3xl opacity-50" />
+
+          <div className="relative z-10">
+            {/* Carousel with fading edges */}
+            <div className="mask-fade-edges relative">
+              <div ref={emblaRef} className="overflow-hidden">
+                <div className="flex -ml-4">
+                  {testimonials.map((testimonial) => (
+                    <div
+                      key={testimonial.name}
+                      className="flex min-w-0 flex-[0_0_100%] flex-col pl-4 md:flex-[0_0_80%] lg:flex-[0_0_60%]"
+                    >
+                      <div className="glass-card relative flex flex-1 flex-col gap-6 p-8 sm:p-10 border-white/10 group transition-all duration-300">
+                        {/* Subtle hover accent */}
+                        <div className="absolute inset-0 z-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                        <Quote className="h-8 w-8 text-accent/30 relative z-10" />
+                        <blockquote className="text-lg leading-relaxed text-foreground/90 italic relative z-10">
+                          {`"${testimonial.quote}"`}
+                        </blockquote>
+                        <div className="mt-auto flex items-center gap-4 relative z-10">
+                          <Avatar className="h-10 w-10 border border-border/30">
+                            <div className="relative h-full w-full overflow-hidden rounded-full">
+                              <Image
+                                src={`/placeholder-${testimonial.initials.toLowerCase()}.jpg`}
+                                alt={testimonial.name}
+                                fill
+                                className="object-cover"
+                                sizes="40px"
+                              />
+                            </div>
+                            <AvatarFallback className="bg-muted text-xs text-foreground">
+                              {testimonial.initials}
+                            </AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <p className="text-sm font-semibold text-foreground">
+                              {testimonial.name}
+                            </p>
+                            <p className="text-sm text-muted-foreground">
+                              {testimonial.title}
+                            </p>
                           </div>
-                          <AvatarFallback className="bg-muted text-xs text-foreground">
-                            {testimonial.initials}
-                          </AvatarFallback>
-                        </Avatar>
-                        <div>
-                          <p className="text-sm font-semibold text-foreground">
-                            {testimonial.name}
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            {testimonial.title}
-                          </p>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Navigation */}
-            <div className="mt-8 flex flex-col items-center justify-center gap-3">
-              {showSwipeHint && (
-                <div className="sm:hidden">
-                  <span className="rounded-full border border-border/30 bg-background/30 px-3 py-1 text-xs text-muted-foreground">
-                    Swipe for more
-                  </span>
-                </div>
-              )}
-
-              <div className="flex items-center justify-center gap-4">
-                <button
-                  onClick={scrollPrev}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-border/30 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  aria-label="Previous testimonial"
-                >
-                  <ChevronLeft className="h-4 w-4" />
-                </button>
-
-                <div className="flex gap-2">
-                  {testimonials.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => emblaApi?.scrollTo(index)}
-                      className={`h-2 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background ${index === selectedIndex
-                          ? "w-6 bg-accent"
-                          : "w-2 bg-muted-foreground/30"
-                        }`}
-                      aria-label={`Go to testimonial ${index + 1}`}
-                    />
                   ))}
                 </div>
+              </div>
 
-                <span className="min-w-[52px] text-center font-mono text-xs text-muted-foreground">
-                  {selectedIndex + 1} / {testimonials.length}
-                </span>
+              {/* Navigation */}
+              <div className="mt-8 flex flex-col items-center justify-center gap-3">
+                {showSwipeHint && (
+                  <div className="sm:hidden">
+                    <span className="rounded-full border border-border/30 bg-background/30 px-3 py-1 text-xs text-muted-foreground">
+                      Swipe for more
+                    </span>
+                  </div>
+                )}
 
-                <button
-                  onClick={scrollNext}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-border/30 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  aria-label="Next testimonial"
-                >
-                  <ChevronRight className="h-4 w-4" />
-                </button>
+                <div className="flex items-center justify-center gap-4">
+                  <button
+                    onClick={scrollPrev}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border/30 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    aria-label="Previous testimonial"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </button>
+
+                  <div className="flex gap-2">
+                    {testimonials.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => emblaApi?.scrollTo(index)}
+                        className={`h-2 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background ${index === selectedIndex
+                          ? "w-6 bg-accent"
+                          : "w-2 bg-muted-foreground/30"
+                          }`}
+                        aria-label={`Go to testimonial ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  <span className="min-w-[52px] text-center font-mono text-xs text-muted-foreground">
+                    {selectedIndex + 1} / {testimonials.length}
+                  </span>
+
+                  <button
+                    onClick={scrollNext}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border/30 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    aria-label="Next testimonial"
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>

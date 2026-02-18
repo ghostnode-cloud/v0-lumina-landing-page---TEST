@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { useBookingModal } from "./booking-modal"
 import { MobileNav } from "./mobile-nav"
@@ -64,63 +65,69 @@ export function Header() {
   }
 
   return (
-    <header
-      className={`glass-header fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-3 shadow-lg shadow-background/50" : "py-4"
-      }`}
-    >
-      <div className="section-container flex items-center justify-between">
+    <div className="fixed left-1/2 top-4 z-50 w-full -translate-x-1/2 px-4 transition-all duration-300 md:top-6 lg:max-w-4xl">
+      <header
+        className={`relative flex items-center justify-between overflow-hidden rounded-full border border-white/5 bg-background/60 px-6 py-2.5 backdrop-blur-xl transition-all duration-300 md:px-8 ${scrolled ? "shadow-[0_8px_32px_rgba(0,0,0,0.3)]" : ""
+          }`}
+      >
+        {/* Animated background accent */}
+        <div className="absolute inset-0 pointer-events-none opacity-20">
+          <div className="absolute -left-[10%] -top-[50%] h-[200%] w-[40%] bg-accent/20 blur-[60px]" />
+          <div className="absolute -right-[10%] -bottom-[50%] h-[200%] w-[40%] bg-accent/10 blur-[60px]" />
+        </div>
+
         <a
           href="#"
           onClick={(e) => {
             e.preventDefault()
             window.scrollTo({ top: 0, behavior: "smooth" })
           }}
-          className="font-serif text-xl tracking-wide text-foreground transition-colors hover:text-accent"
+          className="relative z-10 font-serif text-lg tracking-wider text-foreground transition-colors hover:text-accent"
         >
           LUMINA
         </a>
 
         <nav
-          className="hidden items-center gap-8 lg:flex"
+          className="relative z-10 hidden items-center gap-1 lg:flex"
           aria-label="Main navigation"
         >
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className={`text-sm font-medium transition-colors focus-visible:outline-none focus-visible:text-foreground focus-visible:underline focus-visible:underline-offset-8 focus-visible:decoration-accent ${
-                activeSection === link.href.replace("#", "")
-                  ? "text-foreground underline underline-offset-8 decoration-accent"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-              aria-current={
-                activeSection === link.href.replace("#", "") ? "page" : undefined
-              }
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="/contact"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Contact
-          </a>
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.replace("#", "")
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`relative px-4 py-1.5 text-xs font-semibold tracking-wide uppercase transition-colors focus-visible:outline-none ${isActive ? "text-accent" : "text-muted-foreground hover:text-foreground"
+                  }`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="active-pill"
+                    className="absolute inset-0 z-[-1] rounded-full bg-accent/10 ring-1 ring-accent/20"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                {link.label}
+              </a>
+            )
+          })}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="relative z-10 flex items-center gap-4">
           <Button
             onClick={openModal}
             size="sm"
-            className="hidden bg-accent text-accent-foreground hover:bg-accent/90 sm:inline-flex"
+            className="hidden h-9 rounded-full bg-accent px-5 text-xs font-bold uppercase tracking-wider text-accent-foreground hover:bg-accent/90 sm:inline-flex"
           >
-            Book Your Tax Strategy Session
+            Start Strategy
           </Button>
-          <MobileNav />
+          <div className="lg:hidden">
+            <MobileNav />
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   )
 }

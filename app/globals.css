@@ -6,8 +6,14 @@
   .text-balance {
     text-wrap: balance;
   }
+
   .perspective-1000 {
     perspective: 1000px;
+  }
+
+  .mask-fade-edges {
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   }
 }
 
@@ -88,9 +94,11 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     scroll-behavior: smooth;
   }
@@ -99,32 +107,33 @@
 @layer components {
   .glass-card {
     background: rgba(30, 41, 59, 0.4);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(71, 85, 105, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
     border-radius: var(--radius);
   }
 
   .glass-card-hover {
     background: rgba(30, 41, 59, 0.4);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(71, 85, 105, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: var(--radius);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
   .glass-card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
+    background: rgba(30, 41, 59, 0.5);
     border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(59, 130, 246, 0.1);
   }
 
   .glass-header {
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(71, 85, 105, 0.2);
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .section-container {

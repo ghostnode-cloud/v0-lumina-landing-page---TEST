@@ -15,12 +15,14 @@ const methods = [
     title: "Proactive Tax Strategy",
     description:
       "We don't wait for tax season. Year-round planning identifies savings opportunities before they expire -- from R&D credits to entity restructuring for maximum efficiency.",
+    className: "md:col-span-2 lg:col-span-1 lg:row-span-2",
   },
   {
     icon: Shield,
     title: "Airtight Compliance",
     description:
       "Every strategy is built to withstand scrutiny. We maintain meticulous documentation and audit-ready files so you can sleep soundly, knowing your position is ironclad.",
+    className: "md:col-span-1",
   },
   {
     icon: Coins,
@@ -28,6 +30,7 @@ const methods = [
     description:
       "Stock options, equity compensation, exit planning -- we specialize in the financial complexities unique to tech founders and startup leadership teams.",
     featured: true,
+    className: "md:col-span-1 lg:col-span-2",
   },
 ]
 
@@ -48,31 +51,39 @@ export function LuminaMethod() {
           </p>
         </ScrollAnimation>
 
-        <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <StaggerContainer className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-6">
           {methods.map((method) => (
             <motion.div
               key={method.title}
               variants={staggerItemVariants}
-              className={`glass-card-hover group relative flex flex-col gap-4 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                method.featured
-                  ? "border-accent/40 ring-1 ring-accent/20 lg:-translate-y-1 lg:scale-[1.03]"
+              className={`glass-card-hover group relative flex min-h-[320px] flex-col justify-end p-8 transition-shadow ${method.className
+                } ${method.featured
+                  ? "border-accent/30 ring-1 ring-accent/10"
                   : ""
-              }`}
+                }`}
             >
-              {method.featured && (
-                <Badge className="absolute right-6 top-6 bg-accent text-accent-foreground hover:bg-accent">
-                  Featured
-                </Badge>
-              )}
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 transition-transform duration-300 group-hover:scale-110 group-hover:bg-accent/20">
-                <method.icon className="h-6 w-6 text-accent" />
+              {/* Dynamic Gradient Background for Bento feel - with overflow hidden here */}
+              <div className="absolute inset-0 z-0 overflow-hidden rounded-[inherit]">
+                <div className={`absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-10 dark:bg-gradient-to-br ${method.featured ? 'from-accent via-accent/50 to-transparent' : 'from-accent/50 via-transparent to-transparent'
+                  }`} />
               </div>
-              <h3 className="text-lg font-semibold text-foreground">
-                {method.title}
-              </h3>
-              <p className="leading-relaxed text-muted-foreground">
-                {method.description}
-              </p>
+
+              <div className="relative z-10">
+                {method.featured && (
+                  <Badge className="mb-4 bg-accent text-accent-foreground hover:bg-accent">
+                    Featured focus
+                  </Badge>
+                )}
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent transition-all duration-500 group-hover:scale-110 group-hover:bg-accent/20 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                  <method.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mb-3 text-xl font-bold tracking-tight text-foreground">
+                  {method.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-foreground lg:max-w-[90%]">
+                  {method.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </StaggerContainer>
