@@ -2,7 +2,6 @@
 
 import { BookingModalProvider } from "@/components/landing/booking-modal"
 import { Header } from "@/components/landing/header"
-import { HeroSection } from "@/components/landing/hero-section"
 import { TrustStrip } from "@/components/landing/trust-strip"
 import { MeetMarcus } from "@/components/landing/meet-marcus"
 import { LuminaMethod } from "@/components/landing/lumina-method"
@@ -19,15 +18,14 @@ export default function Page() {
     <BookingModalProvider>
       <Header />
       <main>
-        <HeroSection />
-        <TrustStrip />
-        <MeetMarcus />
-        <LuminaMethod />
         <ScrollFrameSequence
           frameCount={240}
           baseUrl="/frames/frame_"
           extension=".jpg"
         />
+        <TrustStrip />
+        <MeetMarcus />
+        <LuminaMethod />
         <Testimonials />
         <PricingSection />
         <FaqSection />
