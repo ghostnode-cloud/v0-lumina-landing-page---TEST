@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/landing/hero-section"
 import { TrustStrip } from "@/components/landing/trust-strip"
 import { MeetMarcus } from "@/components/landing/meet-marcus"
 import { LuminaMethod } from "@/components/landing/lumina-method"
+import { ScrollFrameSequence } from "@/components/landing/scroll-frame-sequence"
 import { Testimonials } from "@/components/landing/testimonials"
 import { PricingSection } from "@/components/landing/pricing-section"
 import { FaqSection } from "@/components/landing/faq-section"
@@ -22,6 +23,11 @@ export default function Page() {
         <TrustStrip />
         <MeetMarcus />
         <LuminaMethod />
+        <ScrollFrameSequence
+          frameCount={240}
+          baseUrl="/frames/frame_"
+          extension=".jpg"
+        />
         <Testimonials />
         <PricingSection />
         <FaqSection />
