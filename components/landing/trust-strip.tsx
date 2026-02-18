@@ -15,7 +15,7 @@ export function TrustStrip() {
   const baseDelay = 0.06
 
   return (
-    <section className="relative border-y border-border/30 bg-muted/50 py-12 sm:py-16">
+    <section className="relative border-y border-black/5 bg-slate-50/50 py-12 sm:py-16">
       <div className="section-container">
         <ScrollAnimation>
           <p className="mb-4 text-center text-xs font-medium uppercase tracking-widest text-muted-foreground sm:mb-8 sm:text-sm">
@@ -37,7 +37,7 @@ export function TrustStrip() {
                 delay={delay}
                 className="flex flex-col items-center gap-2 rounded-lg px-2 py-3 text-center sm:px-4 sm:py-4 lg:rounded-none lg:px-8 lg:py-0"
               >
-                <span className="font-mono text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+                <span className="font-sans text-3xl font-black tracking-tighter text-foreground sm:text-4xl">
                   {stat.value}
                 </span>
                 <span className="text-sm text-muted-foreground">

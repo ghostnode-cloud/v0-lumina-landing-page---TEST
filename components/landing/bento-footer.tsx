@@ -23,14 +23,14 @@ export function BentoFooter() {
   const { openModal } = useBookingModal()
 
   return (
-    <footer className="border-t border-border/30 bg-[#0A0F1C]">
+    <footer className="border-t border-black/5 bg-background">
       <div className="section-container py-16 sm:py-20">
         <ScrollAnimation>
-          <div className="grid gap-px overflow-hidden rounded-xl border border-border/20 bg-border/10 md:grid-cols-2">
+          <div className="grid gap-px overflow-hidden rounded-xl border border-black/5 bg-black/5 md:grid-cols-2">
             {/* Box 1: Brand */}
-            <div className="flex flex-col justify-between bg-[#0A0F1C] p-8 sm:p-10">
+            <div className="flex flex-col justify-between bg-background p-8 sm:p-10">
               <div>
-                <span className="font-serif text-2xl tracking-wide text-foreground">
+                <span className="font-sans text-2xl font-black tracking-tighter text-foreground">
                   LUMINA
                 </span>
                 <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -45,8 +45,8 @@ export function BentoFooter() {
             </div>
 
             {/* Box 2: Final CTA (surface this earlier on mobile) */}
-            <div className="order-2 flex flex-col items-start justify-center bg-[#0A0F1C] p-8 sm:order-2 sm:p-10 md:order-none">
-              <h3 className="font-serif text-2xl text-foreground sm:text-3xl">
+            <div className="order-2 flex flex-col items-start justify-center bg-background p-8 sm:order-2 sm:p-10 md:order-none">
+              <h3 className="font-sans text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
                 Ready to optimize?
               </h3>
               <p className="mt-3 text-sm text-muted-foreground">
@@ -62,7 +62,7 @@ export function BentoFooter() {
             </div>
 
             {/* Box 3: Contact */}
-            <div className="order-3 flex flex-col gap-6 bg-[#0A0F1C] p-8 sm:order-3 sm:p-10 md:order-none">
+            <div className="order-3 flex flex-col gap-6 bg-background p-8 sm:order-3 sm:p-10 md:order-none">
               <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 Get in Touch
               </h3>
@@ -87,7 +87,7 @@ export function BentoFooter() {
             </div>
 
             {/* Box 4: Navigation */}
-            <div className="order-4 flex flex-col gap-6 bg-[#0A0F1C] p-8 sm:order-4 sm:p-10 md:order-none">
+            <div className="order-4 flex flex-col gap-6 bg-background p-8 sm:order-4 sm:p-10 md:order-none">
               <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 Navigate
               </h3>
@@ -114,7 +114,7 @@ export function BentoFooter() {
               </nav>
             </div>
 
-           
+
           </div>
         </ScrollAnimation>
       </div>

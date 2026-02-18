@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { useBookingModal } from "./booking-modal"
 import { MobileNav } from "./mobile-nav"
+import { ScrollProgress } from "./scroll-progress"
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -67,7 +68,7 @@ export function Header() {
   return (
     <div className="fixed left-1/2 top-4 z-50 w-full -translate-x-1/2 px-4 transition-all duration-300 md:top-6 lg:max-w-4xl">
       <header
-        className={`relative flex items-center justify-between overflow-hidden rounded-full border border-white/5 bg-background/60 px-6 py-2.5 backdrop-blur-xl transition-all duration-300 md:px-8 ${scrolled ? "shadow-[0_8px_32px_rgba(0,0,0,0.3)]" : ""
+        className={`relative flex items-center justify-between overflow-hidden rounded-full border border-black/5 bg-background/60 px-6 py-2.5 backdrop-blur-xl transition-all duration-300 md:px-8 ${scrolled ? "shadow-[0_8px_32px_rgba(0,0,0,0.08)]" : ""
           }`}
       >
         {/* Animated background accent */}
@@ -82,7 +83,7 @@ export function Header() {
             e.preventDefault()
             window.scrollTo({ top: 0, behavior: "smooth" })
           }}
-          className="relative z-10 font-serif text-lg tracking-wider text-foreground transition-colors hover:text-accent"
+          className="relative z-10 font-sans text-lg font-black tracking-tighter text-foreground transition-colors hover:text-accent"
         >
           LUMINA
         </a>
@@ -127,6 +128,7 @@ export function Header() {
             <MobileNav />
           </div>
         </div>
+        <ScrollProgress />
       </header>
     </div>
   )

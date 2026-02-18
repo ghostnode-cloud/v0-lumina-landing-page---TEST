@@ -71,7 +71,7 @@ export function PricingSection() {
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-widest text-accent">
             Investment
           </span>
-          <h2 className="font-serif text-3xl text-foreground sm:text-4xl md:text-5xl">
+          <h2 className="font-sans text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             <span className="text-balance">Transparent Pricing</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -89,8 +89,8 @@ export function PricingSection() {
               key={tier.name}
               variants={staggerItemVariants}
               className={`glass-card-hover group relative flex flex-col p-8 ${tier.highlighted
-                  ? "border-accent/30 ring-1 ring-accent/10 lg:scale-[1.03] lg:-translate-y-2 lg:z-10"
-                  : "border-white/5"
+                ? "border-accent/30 ring-1 ring-accent/10 lg:scale-[1.03] lg:-translate-y-2 lg:z-10"
+                : "border-black/5 shadow-sm"
                 }`}
             >
               {tier.highlighted && (
@@ -112,7 +112,7 @@ export function PricingSection() {
               </div>
 
               <div className="mb-8">
-                <span className="font-mono text-4xl font-semibold text-foreground">
+                <span className="font-sans text-4xl font-black tracking-tighter text-foreground">
                   {tier.price}
                 </span>
                 {tier.period && (
@@ -140,8 +140,8 @@ export function PricingSection() {
               <Button
                 onClick={openModal}
                 className={`w-full ${tier.highlighted
-                    ? "bg-accent text-accent-foreground hover:bg-accent/90"
-                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                  ? "bg-accent text-accent-foreground hover:bg-accent/90"
+                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
                   }`}
               >
                 {tier.price === "Custom"

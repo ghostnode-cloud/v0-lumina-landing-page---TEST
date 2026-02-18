@@ -100,7 +100,7 @@ export function AuroraBackground() {
             style={{
               background: orb.gradient,
               filter: "blur(100px)",
-              mixBlendMode: "screen",
+              mixBlendMode: "multiply",
               willChange: "transform",
               x,
               y,
@@ -122,7 +122,7 @@ export function AuroraBackground() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 40%, hsl(222.2 47.4% 11.2% / 0.7) 100%)",
+            "radial-gradient(ellipse at center, transparent 40%, hsl(210 40% 98% / 0.7) 100%)",
         }}
       />
     </div>

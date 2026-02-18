@@ -70,7 +70,7 @@ export default function LearnMoreModalInternal({
     return (
         <DialogContent className="glass-card max-h-[85vh] overflow-y-auto border-border/30 bg-background/95 sm:max-w-xl">
             <DialogHeader>
-                <DialogTitle className="font-serif text-2xl text-foreground sm:text-3xl">
+                <DialogTitle className="font-sans text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
                     Why Lumina?
                 </DialogTitle>
                 <DialogDescription className="text-sm leading-relaxed text-muted-foreground">
@@ -91,8 +91,8 @@ export default function LearnMoreModalInternal({
                             type="button"
                             onClick={() => setActiveIndex(index)}
                             className={`h-1.5 rounded-full transition-all ${index === activeIndex
-                                    ? "w-4 bg-accent"
-                                    : "w-1.5 bg-muted-foreground/30"
+                                ? "w-4 bg-accent"
+                                : "w-1.5 bg-muted-foreground/30"
                                 }`}
                             aria-label={`Jump to reason ${index + 1}`}
                         />

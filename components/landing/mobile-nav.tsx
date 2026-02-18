@@ -54,7 +54,7 @@ export function MobileNav() {
         className="glass-card border-border/30 w-72"
       >
         <SheetHeader>
-          <SheetTitle className="font-serif text-xl text-foreground">
+          <SheetTitle className="font-sans text-xl font-black tracking-tighter text-foreground">
             LUMINA
           </SheetTitle>
         </SheetHeader>

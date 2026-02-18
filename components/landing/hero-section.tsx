@@ -7,6 +7,8 @@ import { useBookingModal } from "./booking-modal"
 import { LearnMoreModal } from "./learn-more-modal"
 import { StrategicInsightCard } from "./strategic-insight-card"
 import { AuroraBackground } from "./aurora-background"
+import { ContextualTooltip } from "./contextual-tooltip"
+import { Magnetic } from "./magnetic"
 
 export function HeroSection() {
   const { openModal } = useBookingModal()
@@ -49,7 +51,7 @@ export function HeroSection() {
               </span>
             </motion.div>
 
-            <h1 className="font-serif text-4xl leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="font-sans text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               <span className="sr-only">
                 Modern tax strategy for people who build the future.
               </span>
@@ -84,7 +86,7 @@ export function HeroSection() {
                 One strategist. Full attention. Real results.
               </span>
               <span className="hidden md:inline">
-                Cutting-edge tax optimization for tech founders and growth-focused
+                Cutting-edge <ContextualTooltip term="tax optimization" definition="Proactive strategies designed to legally reduce tax liability through credits, deductions, and structural shifts." /> for tech founders and growth-focused
                 businesses. One strategist. Full attention. Real results.
               </span>
             </motion.p>
@@ -96,26 +98,30 @@ export function HeroSection() {
               className="mt-10 flex flex-col items-center gap-4 lg:items-start"
             >
               <div className="flex flex-col items-center gap-3 sm:flex-row">
-                <Button
-                  onClick={openModal}
-                  size="lg"
-                  className="group bg-accent px-8 py-6 text-base font-medium text-accent-foreground hover:bg-accent/90"
-                >
-                  Book Your Tax Strategy Session
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-                <LearnMoreModal
-                  trigger={
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="group border-border/40 bg-transparent px-6 py-6 text-base font-medium text-foreground hover:border-accent/50 hover:bg-accent/5 hover:text-accent"
-                    >
-                      <Info className="mr-2 h-4 w-4" />
-                      Learn More
-                    </Button>
-                  }
-                />
+                <Magnetic>
+                  <Button
+                    onClick={openModal}
+                    size="lg"
+                    className="group bg-accent px-8 py-6 text-base font-bold text-accent-foreground hover:bg-accent/90"
+                  >
+                    Book Your Tax Strategy Session
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Magnetic>
+                <Magnetic>
+                  <LearnMoreModal
+                    trigger={
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        className="group border-black/10 bg-white/40 px-6 py-6 text-base font-bold text-foreground backdrop-blur-sm hover:border-accent/50 hover:bg-accent/5 hover:text-accent"
+                      >
+                        <Info className="mr-2 h-4 w-4" />
+                        Learn More
+                      </Button>
+                    }
+                  />
+                </Magnetic>
               </div>
               <p className="text-sm text-muted-foreground">
                 Direct access to Marcus Chen — no gatekeepers.

@@ -39,7 +39,7 @@ export default function BookingModal({
                     <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/10">
                         <CalendarDays className="h-6 w-6 text-accent" />
                     </div>
-                    <DialogTitle className="text-center font-serif text-2xl text-foreground">
+                    <DialogTitle className="text-center font-sans text-2xl font-extrabold tracking-tight text-foreground">
                         Book Your Tax Strategy Session
                     </DialogTitle>
                     <DialogDescription className="text-center text-muted-foreground">

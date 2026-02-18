@@ -102,6 +102,17 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 - [x] **12.2** Redesign main navigation as a floating pill-shaped "Glass" bar with `backdrop-blur` and adaptive styling.
 - [x] **12.3** Audit and apply consistent Glassmorphism (thin glowing borders + backdrop blur) to all cards and modals.
 - [x] **12.4** Implement physics-based spring animations for all card hover states and scroll-entrance transitions.
+---
+
+## 13. Modern Clean Redesign (Light Theme)
+
+Transitioning to a high-end, crisp aesthetic with bold typography.
+
+- [ ] **13.1** Transition background from dark midnight to `Slate-50` / `White` for a clean, modern foundation.
+- [ ] **13.2** Switch headline font from Instrument Serif to bold/extrabold **Geist Sans** (or Inter) for a technical "Founder" feel.
+- [ ] **13.3** Implement **Bento Grid** layout for feature sections with varying card sizes and asymmetric rhythm.
+- [ ] **13.4** Replace radial glows with sophisticated **Mesh Gradients** (Indigo/Violet/White) at low opacity for depth.
+- [ ] **13.5** Update glass cards for light mode: White background (20% opacity), high blur, and thin `Slate-200` borders.
 
 ---
 
@@ -121,6 +132,7 @@ Implementation plan for the frontend-only improvements brainstorm. Use the check
 | 10. Small Wins               | 0    | 3     |
 | 11. Hero Impact              | 3    | 3     |
 | 12. Bento & Glass            | 4    | 4     |
-| **Total**                    | **28**| **41**|
+| 13. Modern Clean Redesign    | 0    | 5     |
+| **Total**                    | **28**| **46**|
 
 *Update the “Done” counts as you complete items. Optional items still count in Total if you choose to implement them.*

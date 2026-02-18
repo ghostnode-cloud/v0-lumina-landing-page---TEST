@@ -18,12 +18,12 @@ export function MeetMarcus() {
         <ScrollAnimation className="relative">
           {/* Background glow for the card */}
           <div className="absolute -inset-4 z-0 bg-accent/5 blur-3xl opacity-50" />
-          <div className="glass-card relative z-10 overflow-hidden border-white/10">
+          <div className="glass-card relative z-10 overflow-hidden border-black/5">
             <div className="flex flex-col items-center gap-10 p-8 md:flex-row md:gap-16 md:p-12 lg:p-16">
               {/* Avatar / Headshot */}
               <div className="flex-shrink-0">
                 <div className="relative">
-                  <div className="absolute -inset-4 rounded-full bg-accent/20 blur-2xl font-serif" />
+                  <div className="absolute -inset-4 rounded-full bg-accent/20 blur-2xl" />
                   <Avatar className="relative h-40 w-40 border-2 border-accent/20 sm:h-48 sm:w-48 md:h-56 md:w-56">
                     <div className="relative h-full w-full overflow-hidden rounded-full">
                       <Image
@@ -34,7 +34,7 @@ export function MeetMarcus() {
                         sizes="(max-width: 640px) 160px, (max-width: 768px) 192px, 224px"
                       />
                     </div>
-                    <AvatarFallback className="bg-muted text-3xl font-serif text-foreground">
+                    <AvatarFallback className="bg-muted text-3xl font-black text-foreground">
                       MC
                     </AvatarFallback>
                   </Avatar>
@@ -46,7 +46,7 @@ export function MeetMarcus() {
                 <span className="mb-3 text-xs font-medium uppercase tracking-widest text-accent">
                   Meet Your Strategist
                 </span>
-                <h2 className="font-serif text-3xl text-foreground sm:text-4xl">
+                <h2 className="font-sans text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
                   Marcus Chen
                 </h2>
                 <div className="mt-3 flex flex-wrap items-center justify-center gap-2 md:justify-start">

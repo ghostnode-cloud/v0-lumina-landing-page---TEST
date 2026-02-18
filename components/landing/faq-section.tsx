@@ -43,13 +43,13 @@ export function FaqSection() {
   const { openModal } = useBookingModal()
 
   return (
-    <section id="faq" className="border-y border-border/30 bg-muted/30 py-24 sm:py-32">
+    <section id="faq" className="border-y border-black/5 bg-slate-50/50 py-24 sm:py-32">
       <div className="section-container">
         <ScrollAnimation className="mx-auto mb-16 max-w-2xl text-center">
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-widest text-accent">
             Common Questions
           </span>
-          <h2 className="font-serif text-3xl text-foreground sm:text-4xl md:text-5xl">
+          <h2 className="font-sans text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             <span className="text-balance">Everything You Need to Know</span>
           </h2>
         </ScrollAnimation>
@@ -60,7 +60,7 @@ export function FaqSection() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="glass-card-hover border-white/5 px-6 transition-all duration-300"
+                className="glass-card-hover border-black/5 px-6 transition-all duration-300 shadow-sm"
               >
                 <AccordionTrigger className="py-5 text-left text-base font-bold tracking-tight text-foreground hover:no-underline hover:text-accent focus-visible:outline-none focus-visible:text-accent">
                   {faq.question}

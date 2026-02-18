@@ -41,7 +41,7 @@ export function StrategicInsightCard() {
                     rotateX,
                     transformStyle: "preserve-3d",
                 }}
-                className="relative h-72 w-full max-w-[340px] overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl transition-colors duration-500 hover:bg-white/[0.05]"
+                className="relative h-72 w-full max-w-[340px] overflow-hidden rounded-[2.5rem] border border-black/5 bg-white/40 p-8 backdrop-blur-2xl transition-colors duration-500 hover:bg-white/60 shadow-sm"
             >
                 {/* Animated background glow */}
                 <div
@@ -60,10 +60,10 @@ export function StrategicInsightCard() {
                     className="flex h-full flex-col justify-between"
                 >
                     <div className="flex items-start justify-between">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/20 text-accent ring-1 ring-accent/30 transition-all duration-500 group-hover:scale-110 group-hover:bg-accent/30 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent ring-1 ring-accent/20 transition-all duration-500 group-hover:scale-110 group-hover:bg-accent/20 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.1)]">
                             <TrendingUp className="h-6 w-6" />
                         </div>
-                        <div className="flex items-center gap-1 rounded-full bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-tighter text-white/40 ring-1 ring-white/10 group-hover:text-accent/60 group-hover:ring-accent/20">
+                        <div className="flex items-center gap-1 rounded-full bg-black/5 px-3 py-1 text-[10px] font-bold uppercase tracking-tighter text-black/40 ring-1 ring-black/10 group-hover:text-accent/60 group-hover:ring-accent/20">
                             <Sparkles className="h-3 w-3" />
                             <span>Live Projection</span>
                         </div>
@@ -76,13 +76,13 @@ export function StrategicInsightCard() {
                                 Strategic Insight
                             </p>
                         </div>
-                        <h3 className="text-3xl font-bold tracking-tight text-white">
+                        <h3 className="text-3xl font-black tracking-tight text-foreground">
                             $124,500
                         </h3>
-                        <p className="mt-1 text-sm font-medium text-white/70">
+                        <p className="mt-1 text-sm font-semibold text-foreground/80">
                             Potential Savings Identified
                         </p>
-                        <p className="mt-4 text-[13px] leading-relaxed text-white/40">
+                        <p className="mt-4 text-[13px] font-medium leading-relaxed text-muted-foreground/80">
                             Unclaimed R&D credits detected from Q4 development cycles and
                             eligible entity restructuring.
                         </p>
@@ -99,7 +99,7 @@ export function StrategicInsightCard() {
                                 </div>
                             ))}
                         </div>
-                        <span className="text-[10px] font-medium text-white/30">
+                        <span className="text-[10px] font-bold text-black/30">
                             +4 more optimizations found
                         </span>
                     </div>

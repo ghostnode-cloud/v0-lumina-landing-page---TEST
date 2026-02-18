@@ -91,7 +91,7 @@ export function Testimonials() {
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-widest text-accent">
             Client Stories
           </span>
-          <h2 className="font-serif text-3xl text-foreground sm:text-4xl md:text-5xl">
+          <h2 className="font-sans text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             <span className="text-balance">Trusted by Tech Founders</span>
           </h2>
         </ScrollAnimation>
@@ -110,7 +110,7 @@ export function Testimonials() {
                       key={testimonial.name}
                       className="flex min-w-0 flex-[0_0_100%] flex-col pl-4 md:flex-[0_0_80%] lg:flex-[0_0_60%]"
                     >
-                      <div className="glass-card relative flex flex-1 flex-col gap-6 p-8 sm:p-10 border-white/10 group transition-all duration-300">
+                      <div className="glass-card relative flex flex-1 flex-col gap-6 p-8 sm:p-10 group transition-all duration-300">
                         {/* Subtle hover accent */}
                         <div className="absolute inset-0 z-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
@@ -129,7 +129,7 @@ export function Testimonials() {
                                 sizes="40px"
                               />
                             </div>
-                            <AvatarFallback className="bg-muted text-xs text-foreground">
+                            <AvatarFallback className="bg-muted text-xs font-bold text-foreground">
                               {testimonial.initials}
                             </AvatarFallback>
                           </Avatar>
