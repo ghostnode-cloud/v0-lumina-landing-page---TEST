@@ -6,7 +6,7 @@ const orbs = [
   {
     id: 1,
     className: "h-[600px] w-[600px] lg:h-[800px] lg:w-[800px]",
-    gradient: "radial-gradient(circle, rgba(59,130,246,0.20) 0%, transparent 70%)",
+    gradient: "radial-gradient(circle, rgba(166,137,75,0.15) 0%, transparent 70%)",
     initial: { x: -100, y: -50, scale: 0.9, opacity: 0.3 },
     animate: {
       x: ["-100px", "80px", "-60px", "-100px"],
@@ -21,7 +21,7 @@ const orbs = [
   {
     id: 2,
     className: "h-[400px] w-[400px] lg:h-[550px] lg:w-[550px]",
-    gradient: "radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)",
+    gradient: "radial-gradient(circle, rgba(15,30,36,0.1) 0%, transparent 70%)",
     initial: { x: 60, y: 30, scale: 1, opacity: 0.2 },
     animate: {
       x: ["60px", "-40px", "80px", "60px"],
@@ -122,7 +122,7 @@ export function AuroraBackground() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 40%, hsl(210 40% 98% / 0.7) 100%)",
+            "radial-gradient(ellipse at center, transparent 40%, hsl(45 23% 94% / 0.8) 100%)",
         }}
       />
     </div>

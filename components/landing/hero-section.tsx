@@ -9,6 +9,7 @@ import { StrategicInsightCard } from "./strategic-insight-card"
 import { AuroraBackground } from "./aurora-background"
 import { ContextualTooltip } from "./contextual-tooltip"
 import { Magnetic } from "./magnetic"
+import { FloatingNumbers } from "./floating-numbers"
 
 export function HeroSection() {
   const { openModal } = useBookingModal()
@@ -19,6 +20,7 @@ export function HeroSection() {
       <div className="pointer-events-none absolute inset-0 opacity-50" aria-hidden="true">
         <AuroraBackground />
       </div>
+      <FloatingNumbers />
       {/* Background accent glow */}
       <div
         className="pointer-events-none absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2"
@@ -51,7 +53,7 @@ export function HeroSection() {
               </span>
             </motion.div>
 
-            <h1 className="font-sans text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="font-serif text-5xl font-normal leading-[1.1] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
               <span className="sr-only">
                 Modern tax strategy for people who build the future.
               </span>
@@ -102,7 +104,7 @@ export function HeroSection() {
                   <Button
                     onClick={openModal}
                     size="lg"
-                    className="group bg-accent px-8 py-6 text-base font-bold text-accent-foreground hover:bg-accent/90"
+                    className="group bg-primary px-8 py-6 text-base font-bold text-primary-foreground hover:bg-primary/90"
                   >
                     Book Your Tax Strategy Session
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -114,7 +116,7 @@ export function HeroSection() {
                       <Button
                         variant="outline"
                         size="lg"
-                        className="group border-black/10 bg-white/40 px-6 py-6 text-base font-bold text-foreground backdrop-blur-sm hover:border-accent/50 hover:bg-accent/5 hover:text-accent"
+                        className="group border-accent/20 bg-white/40 px-6 py-6 text-base font-bold text-foreground backdrop-blur-sm hover:border-accent/50 hover:bg-accent/5 hover:text-accent"
                       >
                         <Info className="mr-2 h-4 w-4" />
                         Learn More

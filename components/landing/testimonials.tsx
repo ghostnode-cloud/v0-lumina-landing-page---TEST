@@ -91,7 +91,7 @@ export function Testimonials() {
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-widest text-accent">
             Client Stories
           </span>
-          <h2 className="font-sans text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+          <h2 className="font-serif text-4xl font-normal tracking-tight text-foreground sm:text-5xl md:text-6xl">
             <span className="text-balance">Trusted by Tech Founders</span>
           </h2>
         </ScrollAnimation>

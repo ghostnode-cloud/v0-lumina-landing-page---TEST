@@ -49,10 +49,10 @@ export function RoiCalculator() {
                     animate={{ scale: 1, opacity: 1 }}
                     className="rounded-xl border border-accent/20 bg-accent/5 p-4 text-center"
                 >
-                    <p className="text-xs font-bold uppercase tracking-widest text-accent/80">
+                    <p className="text-xs font-bold uppercase tracking-widest text-accent">
                         Est. Annual Savings
                     </p>
-                    <p className="mt-1 text-3xl font-black tracking-tighter text-accent">
+                    <p className="mt-1 font-serif text-3xl font-normal tracking-tight text-accent">
                         £{Math.round(savings).toLocaleString()}
                     </p>
                     <div className="mt-2 flex items-center justify-center gap-1 text-[10px] text-accent/60">

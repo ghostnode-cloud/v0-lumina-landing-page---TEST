@@ -46,7 +46,7 @@ export function MeetMarcus() {
                 <span className="mb-3 text-xs font-medium uppercase tracking-widest text-accent">
                   Meet Your Strategist
                 </span>
-                <h2 className="font-sans text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
+                <h2 className="font-serif text-4xl font-normal tracking-tight text-foreground sm:text-5xl">
                   Marcus Chen
                 </h2>
                 <div className="mt-3 flex flex-wrap items-center justify-center gap-2 md:justify-start">

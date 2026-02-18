@@ -23,14 +23,14 @@ export function BentoFooter() {
   const { openModal } = useBookingModal()
 
   return (
-    <footer className="border-t border-black/5 bg-background">
+    <footer className="border-t border-accent/10 bg-background">
       <div className="section-container py-16 sm:py-20">
         <ScrollAnimation>
           <div className="grid gap-px overflow-hidden rounded-xl border border-black/5 bg-black/5 md:grid-cols-2">
             {/* Box 1: Brand */}
             <div className="flex flex-col justify-between bg-background p-8 sm:p-10">
               <div>
-                <span className="font-sans text-2xl font-black tracking-tighter text-foreground">
+                <span className="font-serif text-2xl font-normal tracking-tight text-foreground">
                   LUMINA
                 </span>
                 <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -46,7 +46,7 @@ export function BentoFooter() {
 
             {/* Box 2: Final CTA (surface this earlier on mobile) */}
             <div className="order-2 flex flex-col items-start justify-center bg-background p-8 sm:order-2 sm:p-10 md:order-none">
-              <h3 className="font-sans text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
+              <h3 className="font-serif text-3xl font-normal tracking-tight text-foreground">
                 Ready to optimize?
               </h3>
               <p className="mt-3 text-sm text-muted-foreground">
@@ -54,7 +54,7 @@ export function BentoFooter() {
               </p>
               <Button
                 onClick={openModal}
-                className="group mt-6 bg-accent text-accent-foreground hover:bg-accent/90"
+                className="group mt-6 bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 Book Your Tax Strategy Session
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

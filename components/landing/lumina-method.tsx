@@ -51,13 +51,14 @@ const methods = [
 
 export function LuminaMethod() {
   return (
-    <section id="method" className="py-24 sm:py-32">
-      <div className="section-container">
+    <section id="method" className="relative bg-muted/30 py-24 sm:py-32">
+      <div className="absolute inset-0 bg-[url('/textures/paper.png')] opacity-[0.02] pointer-events-none" />
+      <div className="section-container relative z-10">
         <ScrollAnimation className="mx-auto mb-16 max-w-2xl text-center">
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-widest text-accent">
             Our Approach
           </span>
-          <h2 className="font-sans text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+          <h2 className="font-serif text-4xl font-normal tracking-tight text-foreground sm:text-5xl md:text-6xl">
             <span className="text-balance">The Lumina Method</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -99,7 +100,7 @@ export function LuminaMethod() {
                         return Icon ? <Icon className="h-6 w-6" /> : null
                       })()}
                     </div>
-                    <h3 className="mb-3 text-xl font-bold tracking-tight text-foreground">
+                    <h3 className="mb-3 font-serif text-2xl font-normal tracking-tight text-foreground">
                       {'title' in method && method.title}
                     </h3>
                     <div className="text-sm leading-relaxed text-muted-foreground lg:max-w-[90%]">

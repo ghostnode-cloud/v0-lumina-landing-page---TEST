@@ -41,13 +41,13 @@ export function StrategicInsightCard() {
                     rotateX,
                     transformStyle: "preserve-3d",
                 }}
-                className="relative h-72 w-full max-w-[340px] overflow-hidden rounded-[2.5rem] border border-black/5 bg-white/40 p-8 backdrop-blur-2xl transition-colors duration-500 hover:bg-white/60 shadow-sm"
+                className="relative h-72 w-full max-w-[340px] overflow-hidden rounded-[2.5rem] border border-accent/15 bg-white/60 p-8 backdrop-blur-2xl transition-all duration-500 hover:bg-white/90 shadow-sm"
             >
                 {/* Animated background glow */}
                 <div
                     className="absolute -inset-[100%] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     style={{
-                        background: "radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%)",
+                        background: "radial-gradient(circle at center, rgba(166, 137, 75, 0.1) 0%, transparent 70%)",
                         transform: "translateZ(-1px)"
                     }}
                 />
@@ -60,10 +60,10 @@ export function StrategicInsightCard() {
                     className="flex h-full flex-col justify-between"
                 >
                     <div className="flex items-start justify-between">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent ring-1 ring-accent/20 transition-all duration-500 group-hover:scale-110 group-hover:bg-accent/20 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.1)]">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent ring-1 ring-accent/20 transition-all duration-500 group-hover:scale-110 group-hover:bg-accent/20 group-hover:shadow-[0_0_20px_rgba(166,137,75,0.2)]">
                             <TrendingUp className="h-6 w-6" />
                         </div>
-                        <div className="flex items-center gap-1 rounded-full bg-black/5 px-3 py-1 text-[10px] font-bold uppercase tracking-tighter text-black/40 ring-1 ring-black/10 group-hover:text-accent/60 group-hover:ring-accent/20">
+                        <div className="flex items-center gap-1 rounded-full bg-accent/5 px-3 py-1 text-[10px] font-bold uppercase tracking-tighter text-accent/60 ring-1 ring-accent/10 group-hover:bg-accent/10 group-hover:text-accent">
                             <Sparkles className="h-3 w-3" />
                             <span>Live Projection</span>
                         </div>
@@ -76,7 +76,7 @@ export function StrategicInsightCard() {
                                 Strategic Insight
                             </p>
                         </div>
-                        <h3 className="text-3xl font-black tracking-tight text-foreground">
+                        <h3 className="font-serif text-3xl font-normal tracking-tight text-foreground">
                             $124,500
                         </h3>
                         <p className="mt-1 text-sm font-semibold text-foreground/80">
@@ -99,7 +99,7 @@ export function StrategicInsightCard() {
                                 </div>
                             ))}
                         </div>
-                        <span className="text-[10px] font-bold text-black/30">
+                        <span className="text-[10px] font-bold text-accent/40">
                             +4 more optimizations found
                         </span>
                     </div>

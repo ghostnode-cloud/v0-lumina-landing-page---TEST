@@ -71,7 +71,7 @@ export function PricingSection() {
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-widest text-accent">
             Investment
           </span>
-          <h2 className="font-sans text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+          <h2 className="font-serif text-4xl font-normal tracking-tight text-foreground sm:text-5xl md:text-6xl">
             <span className="text-balance">Transparent Pricing</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -112,7 +112,7 @@ export function PricingSection() {
               </div>
 
               <div className="mb-8">
-                <span className="font-sans text-4xl font-black tracking-tighter text-foreground">
+                <span className="font-serif text-5xl font-normal tracking-tight text-foreground">
                   {tier.price}
                 </span>
                 {tier.period && (

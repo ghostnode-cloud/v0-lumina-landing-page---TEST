@@ -83,7 +83,7 @@ export function Header() {
             e.preventDefault()
             window.scrollTo({ top: 0, behavior: "smooth" })
           }}
-          className="relative z-10 font-sans text-lg font-black tracking-tighter text-foreground transition-colors hover:text-accent"
+          className="relative z-10 font-serif text-xl font-normal tracking-tight text-foreground transition-colors hover:text-accent"
         >
           LUMINA
         </a>
@@ -120,7 +120,7 @@ export function Header() {
           <Button
             onClick={openModal}
             size="sm"
-            className="hidden h-9 rounded-full bg-accent px-5 text-xs font-bold uppercase tracking-wider text-accent-foreground hover:bg-accent/90 sm:inline-flex"
+            className="hidden h-9 rounded-full bg-primary px-5 text-xs font-bold uppercase tracking-wider text-primary-foreground hover:bg-primary/90 sm:inline-flex"
           >
             Start Strategy
           </Button>
